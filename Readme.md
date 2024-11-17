@@ -5,7 +5,7 @@ Welcome to Day 1 of the Job-Ready Devs 30-Day Challenge! Today, we’ll focus on
 ## Expected Output
 At the end of Day 1, you will have a Git and VS Code set up environment, and you will get an expected output like the one shown below:
 
-![Expected Output](https://gfxvsstorage.blob.core.windows.net/gfxvscontainer/Day-1.png)
+![Expected Output](https://gfxvsstorage.blob.core.windows.net/gfxvscontainer/Day1.png)
 
 ## Overview
 Today’s lesson will get you started with:
