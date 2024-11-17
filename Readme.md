@@ -5,9 +5,7 @@ Welcome to Day 4 of the **Job-Ready Devs 30-Day Challenge!** 🎉 Today, you’l
 ## Expected Output 
 At the end of **Day 4**, you will have knowledge of basic **Javascript Methods** and **Properties**, and you will get an expected output like the one shown below:
 
-<video src="https://gfxvsstorage.blob.core.windows.net/gfxvscontainer/Day4.mp4" controls width="600">
-    Your browser does not support the video tag.
-</video>
+![Expected Output](https://gfxvsstorage.blob.core.windows.net/gfxvscontainer/Day4.gif)
 
 ## Overview
 In this lesson, you’ll:
