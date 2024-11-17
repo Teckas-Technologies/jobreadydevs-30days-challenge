@@ -1,194 +1,449 @@
-# 🚀 Welcome to the Job-Ready Devs 30-Day Challenge!
+# Day 3: CSS Basics + Styling the Interface
+Welcome to Day 3 of the **Job-Ready Devs 30-Day Challenge!** 🎨 Today, we’ll focus on improving the visual appeal of our **Student Management App**. With CSS, you’ll transform the basic structure from Day 2 into a sleek, user-friendly interface. By the end of this session, your app will look professional and modern, setting the stage for more advanced features in the coming days.
 
-Hey future developers! 👋 We’re thrilled to kick off this 30-Day Challenge where you’ll gain practical, job-ready skills by building a complete full-stack Student Management Web Application.
+## Expected Output
+At the end of **Day 3**, you will have knowledge of **CSS style attributes** and **types of selectors**, and you will get an expected output like the one shown below:
+![Expected Output](https://gfxvsstorage.blob.core.windows.net/gfxvscontainer/Day-3.png)
 
-## Daily work flow
-### Step 1: Daily Materials & Assignments
-📌 Daily Lesson Materials & Assignments Link will be posted on the [**Job-Ready Devs**](https://t.me/jobreadydevs) Telegram Channel!
+## Overview
+In this lesson, you’ll:
 
-### Step 2: Open the Assignment
-1️⃣ Click the **assignment link** in Telegram to open classroom.github.com.  
-2️⃣ Don’t have a GitHub account? [Create one](https://github.com/signup)!  
-3️⃣ Sign in using your **GitHub** account.  
-4️⃣ Click the "Accept Assignment" button.  
+1. **Learn CSS basics**: Explore key properties for styling web pages.
+2. **Enhance the layout**: Style the navigation bar, student list, and form sections.
+3. **Focus on typography and design consistency**: Apply color schemes, spacing, and borders for a polished look.
+4. **Boost your confidence**: See how a few lines of CSS can make a big difference!  
+Remember: Good design improves user experience. While functionality is crucial, an attractive and intuitive interface will make your app stand out.
 
-### Step 3: Access Forked Repository
-👉 The classroom generates a forked repository URL for you.  
-👉 Click on the URL to visit your forked repository.  
+## Objectives
+1. Learn and apply CSS basics: selectors, properties, and values.
+2. Style the navigation bar for a modern and functional look.
+3. Design the student list and form sections with clean layouts and consistent themes.
+4. Practice linking CSS to HTML for seamless integration.
 
-### Step 4: Copy the Repository URL
-👉 On your forked repository page, click the "**Code**" button.  
-👉 Copy the **HTTPS URL** shown for the repository.  
+## CSS Style Selectors
+1. **Element Selector**
+    - The element selector applies styles to all elements of a specific type.
 
-### Step 5: Clone the Repository
-👉 Open your **terminal** and run the command:  
-```bash
-git clone <copied_url_from_repository>
-```
+    **Example**:
+    ```css
+    nav {
+        background-color: #007BFF; /* Applies to all <nav> elements */
+    }
+    ```
 
-### Step 6: Open in VS Code
-👉 Open the cloned repository folder in **VS Code**.
+    - Targets all `<nav>` elements in the `html` document.
+    - Commonly used for global styles.
 
-### Step 7: Checkout the Day’s Branch
-👉 Run the command to switch to the specific day’s branch:
-```bash
-git checkout Day-1
-```
+2. **Class Selector**
+    - The class selector applies styles to elements with a specific class attribute.
+    **Syntax**:
+    ```css
+    .class-name {
+        property: value;
+    }
+    ```
 
-### Step 8: Learn and Code
-📖 Learn the topics in the day’s branch `README.md`.  
-💻 Complete the assignment using the `starter code` provided.
+    **Example**:
+    ```css
+    .nav-item {
+        padding: 0.5rem; /* Adds padding to elements with the class 'nav-item' */
+    }
+    ```
 
-### Step 9: Verify Output
-✔️ Check that your output matches the `expected output`.
+    - Use a period (`.`) followed by the class name.
+    - Multiple elements can share the same class.
 
-### Step 10: Submit Your Code
-👉 Run these commands to submit your work:
-```bash
-git add .
-git commit -m "your commit message"
-git push origin Day-1
-git push origin Day-1:main
-```
+3. **ID Selector**
+    - The ID selector applies styles to a single element with a unique ID attribute.
+    **Syntax**:
+    ```css
+    #id-name {
+        property: value;
+    }
+    ```
 
----
+    **Example**:
+    ```css
+    #student-list {
+        margin: 2rem 0; /* Applies to the element with ID 'student-list' */
+    }
+    ```
 
-🚀 Once you push your code to GitHub, your assignment is successfully submitted! 🎉
+    - Use a hash (`#`) followed by the ID name.
+    - IDs must be unique on a webpage.
 
----
 
-# Job-Ready Devs 30-Day Challenge Syllabus
+## CSS basic attributes
 
-## Week 1: Frontend Foundations with HTML, CSS, and JavaScript
-### Goal: 
-- Build a static frontend for the **Student Management App**, covering essential `HTML`, `CSS`, and `JavaScript` basics.
+1. `background-color`
+    - Sets the background color of an element.  
+    **Example**:
+    ```css
+    background-color: #007BFF; // hexadecimal values define the different colors
+    ```
 
-**Day 1**: Environment Setup and Hello, World!
-- Set up `GitHub`, `Visual Studio Code`, `Git`, and `Node.js`.
-- Create and push a basic "Hello, World!" `HTML` and `JavaScript` project.
+2. `color`
+    - Defines the text color inside an element.  
+    **Example**:
+    ```css
+    color: white;
+    ```
 
-**Day 2**: HTML Basics + App Structure
-- Build the basic structure of the app: navigation bar, student list section, and form.
-- Create an HTML layout with sections for adding and viewing students.
+3. `padding`
+    - Adds space inside an element, between its content and its border.  
+    **Example**:
+    ```css
+    padding: 1rem;
+    ```
 
-**Day 3**: CSS Basics + Styling the Interface
-- Style the app using CSS for layout, colors, and fonts.
-- Focus on styling the form and list sections for a clean look.  
+4. `margin`
+    - Adds space outside an element, between it and adjacent elements.  
+    **Example**:
+    ```css
+    margin: 2rem 0;
+    ```
 
-**Day 4**: JavaScript Basics + DOM Manipulation  
-- Learn basic `JavaScript` and `DOM` manipulation.
-- Use JavaScript to capture form inputs and display them on the page.
+5. `border`
+    - Specifies the border style, width, and color of an element.  
+    **Example**:
+    ```css
+    border: 1px solid #ddd;
+    ```
 
-**Day 5**: JavaScript Functions + Dynamic Rendering
-- Create functions to handle data and `dynamically render` a student list.
-- Implement a `function` that displays student data in a structured list format.
+6. `border-radius`
+    - Rounds the corners of an element.  
+    **Example**:
+    ```css
+    border-radius: 5px;
+    ```
 
-**Day 6**: GitHub Portfolio Setup + Documentation Basics
-- Set up a `README` file in GitHub, add `project documentation`, and push updates.
-- Practice writing README instructions for better GitHub portfolio visibility.
+7. `display`
+    - Controls the layout behavior of an element (e.g., flex, block, inline).  
+    **Example**:
+    ```css
+    display: flex;
+    ```
 
-**Day 7**: Weekly Recap + Q&A
-- Review progress, troubleshoot issues, and provide a Q&A session.
+8. `gap`
+    - Adds space between child elements in a flex or grid container.  
+    **Example**:
+    ```css
+    gap: 1rem;
+    ```
 
----
+9. `text-decoration`
+    - Adds or removes text decoration (e.g., underline, none).  
+    **Example**:
+    ```css
+    text-decoration: none;
+    ```
 
-## Week 2: Adding Interactivity and Creating a Backend with Node.js and Express
-### Goal: 
-- Add interactivity to the frontend and set up a Node.js backend to handle data requests.
-
-**Day 8**: JavaScript Event Listeners + Data Handling
-- Improve form functionality with `JavaScript event listeners` to capture user input.
-- Create an interactive form with `submit` and `reset` buttons.
-
-**Day 9**: Introduction to Node.js + Setting Up a Basic Server
-- Set up a simple `Node.js` server to serve the application and prepare for backend tasks.
-
-**Day 10**: Express.js Basics + Creating Routes
-- Install `Express.js` and set up basic API routes.
-- Create routes to handle requests, such as “GET /students.”
-
-**Day 11**: Working with JSON Data + Building the Student API
-- Serve JSON data from the `backend` to the frontend.
-- Create an endpoint to retrieve a list of students in JSON format.
-
-**Day 12**: Fetch API + Connecting Frontend and Backend
-- Use JavaScript’s `Fetch API` to retrieve data from the backend and display it on the frontend.
-
-**Day 13**: Git Workflow + Branching
-- Practice branching in Git for different features and merging branches back to main.
-- Learn `Git commands` for a collaborative coding workflow.
-
-**Day 14**: Weekly Recap + Group Code Review
-- Review project progress and provide feedback on submissions.
-
----
-
-## Week 3: Database Integration and CRUD Operations with MongoDB
-### Goal: 
-- Implement data persistence with MongoDB and create a fully functional API with CRUD operations.
-
-**Day 15**: Introduction to MongoDB + Setting Up a Database
-- Learn database basics and set up a `MongoDB` instance.
-- Connect MongoDB to the `Node.js` server.
-
-**Day 16**: Creating a Data Model with Mongoose
-- Define a student data model using `Mongoose`.
-- Set up a `schema` to store and manage student data.
-
-**Day 17**: CRUD Operations (Create, Read, Update, Delete) with Express and MongoDB
-- Build `API` routes for `CRUD operations` on student data.
-- Test each route with sample data.
-
-**Day 18**: Integrating CRUD API with the Frontend
-- Use Fetch API methods to connect frontend `CRUD operations` with the backend.
-- Add buttons and functions for `adding`, `updating`, and `deleting` student records.
-
-**Day 19**: Error Handling and Validation
-- Implement basic error handling and validation in Express.
-- Ensure data fields are completed correctly when submitting student data.
-
-**Day 20**: Testing and Debugging the Application
-- Conduct end-to-end testing for all `CRUD features`, fixing any issues encountered.
-
-**Day 21**: Weekly Recap + Feedback
-- Review project progress and share feedback with participants.
+10. `cursor`
+    - Changes the mouse cursor style when hovering over an element.  
+    **Example**:
+    ```css
+    cursor: pointer;
+    ```
 
 ---
 
-## Week 4: Final Touches, Deployment, and Portfolio Building
-### Goal: 
-- Polish the app, deploy it live, and create a professional GitHub portfolio.
+## Steps
+### Step 1: Create a CSS File
+1. Switch to the "Day-3" Branch
+    - Switch to the "Day-3" branch by running the following command in the terminal
+    ```bash
+     git checkout Day-3
+    ```
+2. In your project folder, create a new file named `styles.css`.
+    **Why?**: Separating CSS from HTML keeps your code organized and easier to manage.
 
-**Day 22**: User Authentication Basics (Optional)
-- (Optional) Add simple `authentication` with a login form for added functionality.
+3. Link the CSS file to your `index.html` file by adding the following inside the `<head>` section:
+    ```html
+    <link rel="stylesheet" href="styles.css">
+    ```
+    - This line tells the browser to apply the styles defined in styles.css to your HTML file.
 
-**Day 23**: UI/UX Enhancements and Final Touches
-- Improve the app’s visual design and user experience.
-- Make adjustments to CSS and add user feedback for smoother interaction.
+### Step 2: Style the Navigation Bar
+1. Open the `styles.css` file.
 
-**Day 24**: Final Testing and Quality Assurance
-- Perform end-to-end testing to ensure app quality and functionality.
+2. Add the following CSS code to style the navigation bar:
+    ```css
+    /* Global styles */
+    * {
+        width: 100%; /* Full width for the whole page */
+        box-sizing: border-box; /* Keep the exact size of elements */
+        margin: 0; /* Remove spaces outside all elements */
+        padding: 0; /* Remove spaces inside all elements */
+    }
 
-**Day 25**: Deployment on Heroku or GitHub Pages
-- Deploy the final application live using `Heroku` or `GitHub` Pages.
-- Ensure the deployed app is fully functional.
+    /* Navbar section styles */
+    nav {
+        width: 100%; /* Make navbar span the entire width */
+        background-color: black; /* Set the navbar background color to black */
+        color: white; /* Set the text color to white */
+        padding: 1rem; /* Add padding inside the navbar */
+        display: flex; /* Use flexbox for layout */
+        gap: 1%; /* Add spacing between child elements inside the navbar */
+        justify-content: space-between; /* Space out items horizontally */
+        align-items: center; /* Align items vertically */
+    }
 
-**Day 26**: Writing a Professional `README` and Project Documentation
-- Document the project thoroughly with setup instructions, features, and usage tips.
+    /* Logo container styles */
+    .logo {
+        display: flex; /* Default layout for flex is row */
+        align-items: center; /* Vertically align items */
+        justify-content: center; /* Center items horizontally */
+        gap: 4px; /* Add a small gap between the logo image and text */
+    }
 
-**Day 27**: Portfolio and LinkedIn Profile Enhancement
-- Update GitHub with completed project files and create a portfolio showcase.
-- Share the project on `LinkedIn` to demonstrate skills.
+    /* Logo image styles */
+    .logo img {
+        width: 3rem; /* Set fixed width for logo image */
+        height: 3rem; /* Set fixed height for logo image */
+        object-fit: cover; /* Ensure the image fits the container */
+        border-radius: 50%; /* Make the image circular */
+    }
 
-**Day 28**: Final Code Review + Group Discussion
-- Conduct a final code review session and group discussion to wrap up the project.
+    /* Navbar title styles */
+    nav h1 {
+        margin: 0; /* Remove default margin around the title */
+    }
 
-**Day 29**: Internship Challenge Announcement + Preparation
-- Introduce the `7-day Internship Challenge` with details on requirements and goals.
+    /* Navbar unordered list styles */
+    nav ul {
+        list-style: none; /* Remove default bullet points */
+        padding: 0; /* Remove default padding for the list */
+        display: flex; /* Arrange list items in a row */
+        justify-content: end; /* Align list items to the right */
+        gap: 1.5rem; /* Add space between each list item */
+    }
 
-**Day 30**: Reflection and Next Steps
-- Reflect on the journey, share accomplishments, and discuss future learning opportunities.
+    /* Navbar list item styles */
+    nav ul li {
+        width: auto; /* Allow list items to take up only necessary width */
+        display: flex; /* Flexbox for alignment */
+        justify-content: center; /* Center list items horizontally */
+        align-items: center; /* Center list items vertically */
+    }
+
+    /* Navbar link styles */
+    nav ul li a {
+        color: white; /* Set link text color to white */
+        text-decoration: none; /* Remove underline from links */
+        font-weight: bold; /* Make link text bold */
+    }
+
+    /* Navbar link hover effect */
+    nav ul li a:hover {
+        text-decoration: underline; /* Add underline when hovering over links */
+        text-underline-offset: 5px; /* Add spacing between text and underline */
+    }
+    ```
+
+3. Save the file and refresh your browser to see the updated navigation bar:
+    - Notice the blue background, white text, and clean spacing between items.
+    - Hover over the links to see the underline effect.
+
+### Step 3: Style the Student List Section
+1. Add the following CSS code to style the student list:
+    ```css
+    /* Styles for the sections container */
+    .sections {
+        display: flex; /* Use flexbox for layout */
+        width: 100%; /* Make the container take up the full width of the page */
+        gap: 3%; /* Add spacing between child elements */
+        padding: 1rem; /* Add padding inside the container */
+    }
+
+    /* Student List section styles */
+    #student-list {
+        width: 50%; /* Assign 50% of the page width to this section */
+        margin: 2rem 0; /* Add space above and below the section */
+        padding: 1rem; /* Add padding inside the section */
+        background-color: #f9f9f9; /* Set a light gray background color */
+        border: 1px solid #ddd; /* Add a light border around the section */
+        border-radius: 5px; /* Round the corners of the section */
+    }
+
+    /* Student List heading styles */
+    #student-list h2 {
+        margin-bottom: 1rem; /* Add spacing below the heading */
+    }
+
+    /* Unordered list in the Student List section */
+    #student-list ul {
+        list-style: none; /* Remove default bullet points */
+        padding: 0; /* Remove default padding */
+    }
+
+    /* Individual list item styles in Student List */
+    #student-list ul li {
+        padding: 0.5rem 0; /* Add vertical padding to list items */
+        border-bottom: 1px solid #ddd; /* Add a divider between list items */
+    }
+
+    /* Remove bottom border for the last list item */
+    #student-list ul li:last-child {
+        border-bottom: none; /* Remove the bottom border */
+    }
+    ```
+
+2. Save the file and refresh your browser:
+    - The section now has a light gray background with rounded corners.
+    - Student names are neatly separated by lines.
+
+### Step 4: Style the Add Student Form
+1. Add the following CSS code to style the form:
+    ```css
+    /* Add Student section styles */
+    #add-student {
+        width: 50%; /* Assign 50% of the page width to this section */
+        margin: 2rem 0; /* Add space above and below the section */
+        padding: 1rem; /* Add padding inside the section */
+        background-color: #f9f9f9; /* Set a light gray background color */
+        border: 1px solid #ddd; /* Add a light border around the section */
+        border-radius: 5px; /* Round the corners of the section */
+    }
+
+    /* Add Student section heading styles */
+    #add-student h2 {
+        margin-bottom: 1rem; /* Add spacing below the heading */
+    }
+
+    /* Form styles inside Add Student section */
+    #add-student form {
+        display: flex; /* Use flexbox for layout */
+        flex-direction: column; /* Stack form elements vertically */
+        gap: 0.5rem; /* Add spacing between form elements */
+    }
+
+    /* Label styles inside Add Student section */
+    #add-student label {
+        font-weight: bold; /* Make label text bold */
+    }
+
+    /* Input field styles in Add Student section */
+    #add-student input {
+        padding: 0.5rem; /* Add padding inside input fields */
+        border: 1px solid #ddd; /* Add a light border to input fields */
+        border-radius: 5px; /* Round the corners of input fields */
+    }
+
+    /* Button styles in Add Student section */
+    #add-student button {
+        width: 10rem; /* Set fixed width for the button */
+        padding: 0.5rem 1rem; /* Add padding to the button */
+        background-color: #48bde8; /* Set a light blue background color */
+        color: white; /* Set button text color to white */
+        border: none; /* Remove default border */
+        border-radius: 5px; /* Round the corners of the button */
+        cursor: pointer; /* Show pointer cursor on hover */
+    }
+
+    /* Button hover effect */
+    #add-student button:hover {
+        background-color: #5AC2E7; /* Change to a darker blue on hover */
+    }
+    ```
+
+2. Save the file and refresh your browser:
+    - The form now looks clean and professional, with visually appealing input fields and buttons.
+
+### Step 5: Style the Footer section
+1. Add the following CSS code to style the footer:
+    ```css
+    /* Footer section styles */
+    footer {
+        width: 100%; /* Make footer span the full width */
+        height: 4rem; /* Set footer height */
+        background: black; /* Set footer background color to black */
+        position: fixed; /* Fix footer to the bottom of the viewport */
+        bottom: 0; /* Align footer to the bottom */
+        justify-content: center; /* Center footer content horizontally */
+        align-items: center; /* Center footer content vertically */
+    }
+
+    /* Footer text styles */
+    footer h2 {
+        color: #fff; /* Set footer text color to white */
+        font-size: 14px; /* Set font size */
+        text-align: center; /* Center align text */
+        line-height: 4rem; /* Vertically center text */
+        font-weight: normal; /* Use normal font weight */
+    }
+
+    /* Footer link styles */
+    footer a {
+        color: #5AC2E7; /* Set link color to light blue */
+    }
+    ```
+
+    2. Save the file and refresh your browser:
+    - The form now looks clean and professional, with visually appealing `footer` with copyright text.
+
+### Step 6: Responsiveness styles for mobile screen
+1. Add the following CSS code to style entire design suitable for mobile:
+    ```css
+    /* Responsive styles for smaller screens */
+    @media (max-width: 768px) {
+        nav h1 {
+            font-size: 14px; /* Reduce font size for smaller screens */
+        }
+        .sections {
+            display: flex; /* Ensure flexbox layout is used */
+            flex-direction: column; /* Stack sections vertically */
+            gap: 0 !important; /* Remove gap between sections */
+        }
+
+        #student-list {
+            width: 100% !important; /* Make the Student List section take full width */
+        }
+
+        #add-student {
+            width: 100% !important; /* Make the Add Student section take full width */
+        }
+    }
+    ```
+
+    - The `@media` query is used to apply specific styles based on the screen's width or other characteristics, enabling responsive design. Here, it adjusts the layout for screens with a width of `768px` or less, ensuring a mobile-friendly layout.
+
+
+### Step 7: Test Your Layout and Style
+1. Open your app in the browser and verify:
+    - The navigation bar is styled and functional.
+    - The student list section is neatly organized.
+    - The form has a polished design.
+    - The footer has the copyright text with respective colors and alignments.
+
+2. Experiment:
+    - Adjust colors, padding, or fonts in `styles.css` to see the effects.
+    - Share screenshots of your styled app in the community chat to inspire others!
+
+## Push Your Changes to GitHub
+Follow these steps to save your progress:
+
+1. **Stage the changes**:
+     ```bash
+     git add .
+     ```  
+
+2. **Commit the changes with a descriptive message**:
+     ```bash
+     git commit -m "Style the Student Management App with CSS"
+     ```  
+
+3. **Push the changes to your GitHub repository**:
+     ```bash
+     git push origin Day-3
+     ```  
+
+4. **Push the final code to main branch**:
+    - Upload your final code to your GitHub main branch:
+    ```bash
+    git push origin Day-3:main
+    ```
 
 ---
 
-### All the best 🚀
+### Amazing job! 🎉  
+Your app now has a clean and professional look. Keep up the great work, and get ready for Day 4!
