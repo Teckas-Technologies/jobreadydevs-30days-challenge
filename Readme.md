@@ -148,7 +148,7 @@ Whether you’re new to development or need a refresher, this day is designed to
 5. **Push the final code to main branch**:
    - Upload your final code to your GitHub main branch:
     ```bash
-    git push origin Day-1:main
+    git push origin Day-1:main --force
     ```
 
 6. **Verify the upload**:
