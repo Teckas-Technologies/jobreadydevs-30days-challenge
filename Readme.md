@@ -204,7 +204,7 @@ Follow these steps to save your progress:
 4. **Push the final code to main branch**:
     - Upload your final code to your GitHub main branch:
     ```bash
-    git push origin Day-2:main
+    git push origin Day-2:main --force
     ```
 
 ---
