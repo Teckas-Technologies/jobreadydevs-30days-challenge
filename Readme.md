@@ -3,7 +3,7 @@ Welcome to Day 3 of the **Job-Ready Devs 30-Day Challenge!** 🎨 Today, we’ll
 
 ## Expected Output
 At the end of **Day 3**, you will have knowledge of **CSS style attributes** and **types of selectors**, and you will get an expected output like the one shown below:
-![Expected Output](https://gfxvsstorage.blob.core.windows.net/gfxvscontainer/Day-3.png)
+![Expected Output](https://gfxvsstorage.blob.core.windows.net/gfxvscontainer/Day3.png)
 
 ## Overview
 In this lesson, you’ll:
