@@ -1,6 +1,11 @@
 # Day 6: GitHub Portfolio Setup + Documentation Basics
 Welcome to Day 6 of the **Job-Ready Devs 30-Day Challenge!** 🌟 Today, we’ll focus on one of the most important aspects of your development portfolio: documentation. A professional and well-structured README file is the first thing potential employers and collaborators notice when they visit your GitHub projects. By the end of this session, your project will stand out with a polished and informative README.
 
+## Expected Output 
+At the end of **Day 6**, you will have knowledge of how to write **README** and why it is important, and you will get an expected output like the one shown below:
+
+![Expected Output](https://gfxvsstorage.blob.core.windows.net/gfxvscontainer/Day6.gif)
+
 ## Overview
 In this lesson, you’ll:
 
