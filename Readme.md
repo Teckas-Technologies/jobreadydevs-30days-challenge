@@ -59,21 +59,23 @@ Why Functions?: Functions help you avoid repetitive code, make debugging easier,
     - Replace the inline DOM manipulation in the form submission code with the new addStudent function:
     ```javascript
     form.addEventListener('submit', (event) => {
-    event.preventDefault();
+        event.preventDefault();
 
-    const name = nameInput.value.trim();
-    const email = emailInput.value.trim();
+        const name = nameInput.value.trim();
+        const email = emailInput.value.trim();
 
-    if (!name || !email) {
-        alert('Please fill out both fields!');
-        return;
-    }
+        if (!name || !email) {
+            alert('Please fill out both fields!');
+            return;
+        }
 
-    // Call the addStudent function
-    addStudent(name, email);
+        // Call the addStudent function
+        addStudent(name, email);
 
-    nameInput.value = '';
-    emailInput.value = '';
+        nameInput.value = '';
+        emailInput.value = '';
+
+        alert("Student Added Successfully!");
     });
     ```
 
@@ -120,24 +122,26 @@ Why Functions?: Functions help you avoid repetitive code, make debugging easier,
     - Modify the event listener to add new students to the array and re-render the list:
     ```javascript
     form.addEventListener('submit', (event) => {
-    event.preventDefault();
+        event.preventDefault();
 
-    const name = nameInput.value.trim();
-    const email = emailInput.value.trim();
+        const name = nameInput.value.trim();
+        const email = emailInput.value.trim();
 
-    if (!name || !email) {
-        alert('Please fill out both fields!');
-        return;
-    }
+        if (!name || !email) {
+            alert('Please fill out both fields!');
+            return;
+        }
 
-    // Add the new student to the array
-    students.push({ name, email });
+        // Add the new student to the array
+        students.push({ name, email });
 
-    // Re-render the student list
-    renderStudentList(students);
+        // Re-render the student list
+        renderStudentList(students);
 
-    nameInput.value = '';
-    emailInput.value = '';
+        nameInput.value = '';
+        emailInput.value = '';
+
+        alert("Student Added Successfully!");
     });
     ```
 
