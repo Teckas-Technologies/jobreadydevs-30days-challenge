@@ -18,7 +18,7 @@ Why it matters: Recruiters and collaborators often evaluate your GitHub profile 
 ## Steps
 ### Step 1: Create a README File
 1. Open your project folder in Visual Studio Code.
-2. Create a new file named `README.md` in the root directory of your project.
+2. Create a new file named `MyREADME.md` in the root directory of your project.
 
 ### Step 2: Add Project Information to the README
 1. Switch to the Day-6 branch:
@@ -27,7 +27,7 @@ Why it matters: Recruiters and collaborators often evaluate your GitHub profile 
     git checkout Day-6
     ```
 
-2. Open the README.md file.
+2. Open the MyREADME.md file.
 3. Add the following content to your README file:
     ```markdown
        # Student Management App
@@ -81,12 +81,12 @@ Why it matters: Visuals immediately communicate the functionality and design of 
 1. Open your terminal and navigate to your project folder.
 2. Stage the changes:
     ```bash
-    git add README.md
+    git add .
     ```
 
 3. Commit the changes with a descriptive message:
     ```bash
-    git commit -m "Add README file with project documentation"
+    git commit -m "Add MyREADME file with project documentation"
     ```
 
 4. Push the changes to your GitHub repository:
@@ -102,7 +102,7 @@ Why it matters: Visuals immediately communicate the functionality and design of 
 
 ### Step 5: Verify Your Changes on GitHub
 1. Open your GitHub repository in your browser.
-2. Confirm that the `README.md` file is displayed on the main page of your repository.
+2. Confirm that the `MyREADME.md` file is displayed on the main page of your repository.
 3. Ensure the screenshot is visible (if added) and all sections are correctly formatted.
 
 ---
