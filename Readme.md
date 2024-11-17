@@ -102,7 +102,7 @@ Why it matters: Visuals immediately communicate the functionality and design of 
 5. **Push the final code to main branch**:
     - Upload your final code to your GitHub main branch:
     ```bash
-    git push origin Day-6:main
+    git push origin Day-6:main --force
     ```
 
 ### Step 5: Verify Your Changes on GitHub
