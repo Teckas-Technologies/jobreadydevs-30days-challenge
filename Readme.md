@@ -37,7 +37,7 @@ Whether you’re new to development or need a refresher, this day is designed to
     - GitHub is a platform for sharing and collaborating on code. You'll use it to host your projects and showcase your progress.
 
 2. **Access the Assignment Repository**
-    - Go to the assignments website: [Assignment](https://assignments.com).
+    - Go to the assignments website: [Assignment](https://classroom.github.com/a/EnsP3b5z).
     - Click on the assignment repository URL provided.
 
 3. **Copy the Git Repository Clone URL**
