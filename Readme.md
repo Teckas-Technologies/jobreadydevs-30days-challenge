@@ -1,194 +1,212 @@
-# 🚀 Welcome to the Job-Ready Devs 30-Day Challenge!
+# Day 2: HTML Basics + App Structure
 
-Hey future developers! 👋 We’re thrilled to kick off this 30-Day Challenge where you’ll gain practical, job-ready skills by building a complete full-stack Student Management Web Application.
+Welcome to Day 2 of the **Job-Ready Devs 30-Day Challenge!** 🎉 Today, we’ll take the first major step toward building our **Student Management App** by creating its structure using HTML. By the end of this session, you'll have a solid layout for your app, complete with a navigation bar, a student list section, and a form to add new students.
 
-## Daily work flow
-### Step 1: Daily Materials & Assignments
-📌 Daily Lesson Materials & Assignments Link will be posted on the [**Job-Ready Devs**](https://t.me/jobreadydevs) Telegram Channel!
+## Expected Output
+At the end of **Day 2**, you will have knowledge of **HTML tags**, and you will get an expected output like the one shown below:
+![Expected Output](https://gfxvsstorage.blob.core.windows.net/gfxvscontainer/Day-2.png)
 
-### Step 2: Open the Assignment
-1️⃣ Click the **assignment link** in Telegram to open classroom.github.com.  
-2️⃣ Don’t have a GitHub account? [Create one](https://github.com/signup)!  
-3️⃣ Sign in using your **GitHub** account.  
-4️⃣ Click the "Accept Assignment" button.  
+## Overview
+In this lesson, you’ll:
 
-### Step 3: Access Forked Repository
-👉 The classroom generates a forked repository URL for you.  
-👉 Click on the URL to visit your forked repository.  
+1. Learn the fundamentals of structuring web pages with HTML.
+2. Create key sections of your app using semantic HTML for better readability and accessibility.
+3. Build a reusable and organized layout to prepare for the next steps—styling with CSS and adding interactivity with JavaScript.  
+Remember: Learning HTML is the foundation of web development. While it may seem basic, a well-structured HTML file makes your code easier to style, maintain, and scale.
 
-### Step 4: Copy the Repository URL
-👉 On your forked repository page, click the "**Code**" button.  
-👉 Copy the **HTTPS URL** shown for the repository.  
 
-### Step 5: Clone the Repository
-👉 Open your **terminal** and run the command:  
-```bash
-git clone <copied_url_from_repository>
-```
+## Objectives  
 
-### Step 6: Open in VS Code
-👉 Open the cloned repository folder in **VS Code**.
+1. **Master HTML basics**: Use elements like `<nav>`, `<section>`, `<ul>`, `<form>`, and more.
+2. **Build a navigation bar**: Help users easily navigate your app.
+3. **Create a structured layout**: Add sections for displaying and managing student information.
+4. **Use semantic HTML**: Write code that's clear and meaningful for both developers and search engines.
 
-### Step 7: Checkout the Day’s Branch
-👉 Run the command to switch to the specific day’s branch:
-```bash
-git checkout Day-1
-```
+## Steps
+### Step 1: Create a New HTML File
+1. Open your project root folder in Visual Studio Code.
+2. Switch to the "Day-2" Branch
+    - Switch to the "Day-2" branch by running the following command in the terminal
+    ```bash
+     git checkout Day-2
+    ```
 
-### Step 8: Learn and Code
-📖 Learn the topics in the day’s branch `README.md`.  
-💻 Complete the assignment using the `starter code` provided.
+3. If you don’t already have an `index.html` file, create one:
+    - Right-click in the file explorer, choose **New File**, and name it `index.html`.
 
-### Step 9: Verify Output
-✔️ Check that your output matches the `expected output`.
+### Step 2: Add the Basic HTML Structure
+1. Every HTML document needs a basic structure. Add the following to your `index.html` file:
+    ```html
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Student Management App</title>
+    </head>
+    <body>
+    </body>
+    </html>
+    ```
 
-### Step 10: Submit Your Code
-👉 Run these commands to submit your work:
-```bash
-git add .
-git commit -m "your commit message"
-git push origin Day-1
-git push origin Day-1:main
-```
+2. **Why this structure matters**:
+    - `<!DOCTYPE html>` tells the browser that we’re using HTML5.
+    - `<html lang="en">` specifies the language of the document for better accessibility.
+    - `<meta charset="UTF-8">` ensures proper rendering of special characters.
+    - `<meta name="viewport" content="width=device-width, initial-scale=1.0">` ensures responsiveness for mobile devices.
+
+### Step 3: Create a Navigation Bar
+1. Inside the `<body>` tag, add a `<nav>` element to create a navigation bar:
+    ```html
+    <nav>
+        <div class="logo">
+            <img src="teckas-logo.jpg" alt="logo">
+            <h1>Student Management</h1>
+        </div>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#student-list">Student List</a></li>
+            <li><a href="#add-student">Add Student</a></li>
+        </ul>
+    </nav>
+    ```
+
+2. **What’s happening here**:
+
+    - `<h1>` represents the main title of your app.
+    - `<ul>` creates an unordered list of navigation links.
+    - `<a href="#">` is used for navigation. Links like `#student-list` allow users to jump to specific sections on the page.
+    - `<div class="logo">`:
+        - Acts as a container for the logo and the title.
+        - Helps style both elements together.
+
+    - `<img src="teckas-logo.jpg" alt="logo">`:
+        - Displays the logo image.
+        - The `src` attribute will give the `url` or `path` of the image.
+        - The `alt` text provides a description of the image.
+
+3. **Pro Tip**: Test your navigation links after adding the corresponding sections below. Clicking them will scroll to the appropriate section if the `id` matches.
+
+### Step 4: Add a Student List Section
+1. Below the `<nav>` element, add a `<section>` for displaying the student list:
+    ```html
+    <div class="sections">
+        <section id="student-list">
+            <h2>Student List</h2>
+            <ul>
+                <!-- Example placeholder for student names -->
+                <li>John Doe</li>
+                <li>Jane Smith</li>
+            </ul>
+        </section>
+    </div>
+    ```
+
+2. **Why use a `<section>`?**
+
+    - Sections help divide your page into logical parts, making it easier to manage and style later.
+    - The id="student-list" allows linking directly to this section using the navigation bar.
+
+3. **What’s next?**
+
+    - We’ll dynamically update this list with JavaScript in the coming days.
+
+
+### Step 5: Create a Form for Adding Students
+1. Below the student list section, add another `<section>` for the form:
+    ```html
+    <section id="add-student">
+        <h2>Add Student</h2>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter student name" required>
+            <br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter student email" required>
+            <br>
+            <button type="submit">Add Student</button>
+        </form>
+    </section>
+    ```
+
+2. **Form details**:
+
+    - `<form>` creates a container for inputs and buttons.
+    - `<label>` describes the input field, improving accessibility for screen readers.
+    - `required` ensures users can’t submit empty fields.
+
+3. **Pro Tip**:
+
+    - Keep your inputs simple for now. We’ll handle form submissions and validations in future lessons.
+
+### Step 6: Footer section
+1. Below the add student section, add the `<footer>` for the copyright section:
+    ```html
+    <footer>
+        <h2>Copyright &copy; 2024. Job Ready Devs held by <a href="https://teckastechnologies.com/">Teckas Technologies!</a></h2>
+    </footer>
+    ```
+
+    - `<footer>` Tag
+        - The `<footer>` tag is a block-level element used to define a `footer` for a section or the entire webpage. It typically contains metadata, copyright information, or links.
+
+    - `<h2>` Tag
+        - The `<h2>` tag is a heading element used to define a subheading on a webpage. It is a block-level element and is the second largest heading in HTML after `<h1>`.
+
+    - `<a>` Tag
+        - The `<a>` tag is used to define hyperlinks. It can link to another webpage, a section within the same page, or any external resource.
+
+        **Attributes**:
+        - `href`:
+            - Specifies the URL of the destination.
+            - Example: href="https://teckastechnologies.com/"
+
+        - `target` (Optional):
+            - Specifies where to open the linked document (e.g., `_blank` for a new tab).
+            - Example: target="_blank"
+  
+
+### Step 7: Review and Save Your Work
+1. Check your file structure:
+
+    - Does your `<body>` contain the `<nav>`, `<section id="student-list">`, and `<section id="add-student">` elements in the right order?
+    - Ensure all tags are properly opened and closed.
+
+2. Save your work using `Ctrl+S` (Windows/Linux) or `Cmd+S` (Mac).
+
+### Step 8: Test Your Page
+1. Open `index.html` in your browser:
+    - Open file explorer and `double-click` the file or drag and drop it into your browser window.
+
+2. Verify the following:
+    - The navigation bar appears at the top of the page.
+    - The student list section is displayed with placeholder names.
+    - The "Add Student" form appears below the student list.
+
+3. Test navigation links:
+    - Clicking on links in the navigation bar should scroll to the corresponding sections.
+
+## Push Your Changes to GitHub
+Follow these steps to save your progress:
+
+1. **Stage the changes**:
+     ```bash
+     git add .
+     ```
+2. **Commit the changes with a descriptive message**:
+     ```bash
+     git commit -m "Added HTML structure"
+     ```
+3. **Push the changes to your GitHub repository**:
+     ```bash
+     git push origin Day-2
+     ```
+4. **Push the final code to main branch**:
+    - Upload your final code to your GitHub main branch:
+    ```bash
+    git push origin Day-2:main
+    ```
 
 ---
 
-🚀 Once you push your code to GitHub, your assignment is successfully submitted! 🎉
-
----
-
-# Job-Ready Devs 30-Day Challenge Syllabus
-
-## Week 1: Frontend Foundations with HTML, CSS, and JavaScript
-### Goal: 
-- Build a static frontend for the **Student Management App**, covering essential `HTML`, `CSS`, and `JavaScript` basics.
-
-**Day 1**: Environment Setup and Hello, World!
-- Set up `GitHub`, `Visual Studio Code`, `Git`, and `Node.js`.
-- Create and push a basic "Hello, World!" `HTML` and `JavaScript` project.
-
-**Day 2**: HTML Basics + App Structure
-- Build the basic structure of the app: navigation bar, student list section, and form.
-- Create an HTML layout with sections for adding and viewing students.
-
-**Day 3**: CSS Basics + Styling the Interface
-- Style the app using CSS for layout, colors, and fonts.
-- Focus on styling the form and list sections for a clean look.  
-
-**Day 4**: JavaScript Basics + DOM Manipulation  
-- Learn basic `JavaScript` and `DOM` manipulation.
-- Use JavaScript to capture form inputs and display them on the page.
-
-**Day 5**: JavaScript Functions + Dynamic Rendering
-- Create functions to handle data and `dynamically render` a student list.
-- Implement a `function` that displays student data in a structured list format.
-
-**Day 6**: GitHub Portfolio Setup + Documentation Basics
-- Set up a `README` file in GitHub, add `project documentation`, and push updates.
-- Practice writing README instructions for better GitHub portfolio visibility.
-
-**Day 7**: Weekly Recap + Q&A
-- Review progress, troubleshoot issues, and provide a Q&A session.
-
----
-
-## Week 2: Adding Interactivity and Creating a Backend with Node.js and Express
-### Goal: 
-- Add interactivity to the frontend and set up a Node.js backend to handle data requests.
-
-**Day 8**: JavaScript Event Listeners + Data Handling
-- Improve form functionality with `JavaScript event listeners` to capture user input.
-- Create an interactive form with `submit` and `reset` buttons.
-
-**Day 9**: Introduction to Node.js + Setting Up a Basic Server
-- Set up a simple `Node.js` server to serve the application and prepare for backend tasks.
-
-**Day 10**: Express.js Basics + Creating Routes
-- Install `Express.js` and set up basic API routes.
-- Create routes to handle requests, such as “GET /students.”
-
-**Day 11**: Working with JSON Data + Building the Student API
-- Serve JSON data from the `backend` to the frontend.
-- Create an endpoint to retrieve a list of students in JSON format.
-
-**Day 12**: Fetch API + Connecting Frontend and Backend
-- Use JavaScript’s `Fetch API` to retrieve data from the backend and display it on the frontend.
-
-**Day 13**: Git Workflow + Branching
-- Practice branching in Git for different features and merging branches back to main.
-- Learn `Git commands` for a collaborative coding workflow.
-
-**Day 14**: Weekly Recap + Group Code Review
-- Review project progress and provide feedback on submissions.
-
----
-
-## Week 3: Database Integration and CRUD Operations with MongoDB
-### Goal: 
-- Implement data persistence with MongoDB and create a fully functional API with CRUD operations.
-
-**Day 15**: Introduction to MongoDB + Setting Up a Database
-- Learn database basics and set up a `MongoDB` instance.
-- Connect MongoDB to the `Node.js` server.
-
-**Day 16**: Creating a Data Model with Mongoose
-- Define a student data model using `Mongoose`.
-- Set up a `schema` to store and manage student data.
-
-**Day 17**: CRUD Operations (Create, Read, Update, Delete) with Express and MongoDB
-- Build `API` routes for `CRUD operations` on student data.
-- Test each route with sample data.
-
-**Day 18**: Integrating CRUD API with the Frontend
-- Use Fetch API methods to connect frontend `CRUD operations` with the backend.
-- Add buttons and functions for `adding`, `updating`, and `deleting` student records.
-
-**Day 19**: Error Handling and Validation
-- Implement basic error handling and validation in Express.
-- Ensure data fields are completed correctly when submitting student data.
-
-**Day 20**: Testing and Debugging the Application
-- Conduct end-to-end testing for all `CRUD features`, fixing any issues encountered.
-
-**Day 21**: Weekly Recap + Feedback
-- Review project progress and share feedback with participants.
-
----
-
-## Week 4: Final Touches, Deployment, and Portfolio Building
-### Goal: 
-- Polish the app, deploy it live, and create a professional GitHub portfolio.
-
-**Day 22**: User Authentication Basics (Optional)
-- (Optional) Add simple `authentication` with a login form for added functionality.
-
-**Day 23**: UI/UX Enhancements and Final Touches
-- Improve the app’s visual design and user experience.
-- Make adjustments to CSS and add user feedback for smoother interaction.
-
-**Day 24**: Final Testing and Quality Assurance
-- Perform end-to-end testing to ensure app quality and functionality.
-
-**Day 25**: Deployment on Heroku or GitHub Pages
-- Deploy the final application live using `Heroku` or `GitHub` Pages.
-- Ensure the deployed app is fully functional.
-
-**Day 26**: Writing a Professional `README` and Project Documentation
-- Document the project thoroughly with setup instructions, features, and usage tips.
-
-**Day 27**: Portfolio and LinkedIn Profile Enhancement
-- Update GitHub with completed project files and create a portfolio showcase.
-- Share the project on `LinkedIn` to demonstrate skills.
-
-**Day 28**: Final Code Review + Group Discussion
-- Conduct a final code review session and group discussion to wrap up the project.
-
-**Day 29**: Internship Challenge Announcement + Preparation
-- Introduce the `7-day Internship Challenge` with details on requirements and goals.
-
-**Day 30**: Reflection and Next Steps
-- Reflect on the journey, share accomplishments, and discuss future learning opportunities.
-
----
-
-### All the best 🚀
+Congratulations! 🎉 You’ve completed Day 2! With your HTML structure in place, you’re ready to start styling your app with CSS in the next session. Keep up the great work, and see you tomorrow!
