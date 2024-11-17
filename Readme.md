@@ -1,5 +1,11 @@
 # Day 5: JavaScript Functions + Dynamic Rendering
+
 Welcome to Day 5 of the **Job-Ready Devs 30-Day Challenge!** 🎉 Today, you’ll learn how to make your JavaScript more modular and efficient by creating reusable functions to manage and dynamically render the student list. By the end of this session, your app will handle multiple student entries seamlessly, while your code becomes cleaner and easier to maintain.
+
+## Expected Output 
+At the end of **Day 5**, you will have knowledge of basic **Javascript Functions** and **Array**, and you will get an expected output like the one shown below:
+
+![Expected Output](https://gfxvsstorage.blob.core.windows.net/gfxvscontainer/Day5.gif)
 
 ## Overview
 In this lesson, you’ll:
