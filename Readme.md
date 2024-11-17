@@ -4,7 +4,7 @@ Welcome to Day 2 of the **Job-Ready Devs 30-Day Challenge!** 🎉 Today, we’ll
 
 ## Expected Output
 At the end of **Day 2**, you will have knowledge of **HTML tags**, and you will get an expected output like the one shown below:
-![Expected Output](https://gfxvsstorage.blob.core.windows.net/gfxvscontainer/Day-2.png)
+![Expected Output](https://gfxvsstorage.blob.core.windows.net/gfxvscontainer/Day2.png)
 
 ## Overview
 In this lesson, you’ll:
