@@ -2,6 +2,13 @@
 
 Welcome to Day 4 of the **Job-Ready Devs 30-Day Challenge!** 🎉 Today, you’ll take your **Student Management App** to the next level by adding interactivity with **JavaScript**. You’ll learn to dynamically update the student list based on user input—just like real-world applications. By the end of this session, your app will respond to user actions and feel alive!
 
+## Expected Output 
+At the end of **Day 4**, you will have knowledge of basic **Javascript Methods** and **Properties**, and you will get an expected output like the one shown below:
+
+<video src="https://gfxvsstorage.blob.core.windows.net/gfxvscontainer/Day4.mp4" controls width="600">
+    Your browser does not support the video tag.
+</video>
+
 ## Overview
 In this lesson, you’ll:
 
