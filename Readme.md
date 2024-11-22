@@ -28,54 +28,31 @@ Why it matters: Interactive forms are essential in every web application. Learni
     - Add a `reset` button to your form, below the submit button:
 
     ```html
-    <button type="reset">Reset</button>
+    <div class="buttons">
+        <button type="submit">Add Student</button>
+        <button type="reset">Reset</button>
+    </div>
     ```
 
 3. Save the file and refresh your browser. You should now see the `reset` button.
 
-### Step 2: Enhance the Submit Button Functionality
-1. Open your `script.js` file.
-2. Update the submit event listener to:
-    - Validate the inputs (ensure both fields are filled).
-    - Dynamically add the user data to the student list.
-    - Display a success message.
 
-    Here’s the code:
-    ```javascript
-    form.addEventListener('submit', (event) => {
-        event.preventDefault(); // Prevent the form from refreshing the page
-
-        // Get the input values
-        const name = nameInput.value.trim();
-        const email = emailInput.value.trim();
-
-        // Validate inputs
-        if (!name || !email) {
-            alert('Please fill out both fields!');
-            return; // Stop if validation fails
-        }
-
-        // Add the new student to the list
-        addStudent(name, email);
-
-        // Display a success message
-        alert('Student added successfully!');
-
-        // Clear the input fields
-        nameInput.value = '';
-        emailInput.value = '';
-    });
+### Step 2: Add Styles to the Reset Button
+1. Open your `styles.css` file.
+2. Add a new style for the `reset` button to distinguish it from the `submit` button. Use the attribute selector to target the `reset` button.
+    ```css
+    /* If the button's type is reset, set the background color to red */
+    #add-student button[type="reset"] {
+        background-color: rgb(218, 78, 78); /* Set background color to red for reset type */
+    }
     ```
 
-3. Test Your Form:
-    - Fill out the form with a `name` and `email`, then click "Submit."
-    - Check if:
-        - The student appears in the list.
-        - A success message is displayed.
-        - The input fields are cleared after submission.
+3. Save your `styles.css` file and refresh your browser. The `reset` button should now have the updated styles.
+
 
 ### Step 3: Add a Confirmation for the Reset Button
-1. Add an event listener to the reset button:
+1. Open your `script.js` file.
+2. Add an event listener to the `reset` button:
     ```javascript
     const resetButton = document.querySelector('button[type="reset"]');
 
@@ -88,7 +65,7 @@ Why it matters: Interactive forms are essential in every web application. Learni
     });
     ```
 
-2. Save and Test:
+3. Save and Test:
     - Click the `reset` button, and confirm whether the form clears or not based on your response.
 
 
@@ -120,6 +97,8 @@ Why it matters: Interactive forms are essential in every web application. Learni
     ```bash
     git push origin Day-8:main --force
     ```
+
+---
 
 ## Fantastic Work! 🎉
 You’ve successfully made your form more interactive by handling events dynamically. This is a significant step in building real-world, user-friendly applications. Keep pushing forward—tomorrow, we’ll dive into backend concepts with **Node.js** and **Express** to take your app to the next level. 🚀
