@@ -27,7 +27,8 @@ In this lesson, you’ll:
 
 
 ## Note: Folder structure
-    ```java
+
+```java
     project-directory/
     ├── public/
     │   ├── index.html
@@ -36,7 +37,7 @@ In this lesson, you’ll:
     │   └── teckas-logo.jpg
     ├── server.js
     └── package.json
-    ```
+```
 
 
 ## Steps
