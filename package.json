@@ -1,0 +1,17 @@
+
+{
+    "name": "job-ready-devs",
+    "version": "1.0.0",
+    "description": "Welcome to Day 10 of the **Job-Ready Devs 30-Day Challenge!** 🎉 Today, you’ll start building a robust backend with **Express.js**, a lightweight and flexible web framework for Node.js. By the end of this lesson, you’ll be able to set up and test basic API routes to handle requests and responses for your application.",
+    "main": "script.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+      "express": "^4.21.1"
+    }
+  }
+  
