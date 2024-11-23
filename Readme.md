@@ -16,6 +16,20 @@ Why it matters: Interactive forms are essential in every web application. Learni
 2. Validate user input and provide meaningful feedback.
 3. Add confirmation dialogs and success messages for better usability.
 
+## The confirm() Function in JavaScript
+The `confirm()` function in JavaScript is used to display a dialog box with a specified message and "OK" and "Cancel" buttons. It pauses the script's execution until the user interacts with the dialog. This function is often used to prompt the user for confirmation before proceeding with an action.
+
+### Syntax
+```javascript
+const result = confirm(message);
+```
+
+- `message`: A string representing the text to display in the dialog box.
+- `result`: A boolean value:
+    - `true` if the user clicks "OK".
+    - `false` if the user clicks "Cancel".
+    
+
 ## Steps
 ### Step 1: Add a Reset Button to the Form
 1. Switch to the "Day-8" Branch
