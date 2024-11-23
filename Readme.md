@@ -2,6 +2,12 @@
 
 Welcome to Day 8 of the **Job-Ready Devs 30-Day Challenge!** 🎉 Today, we’ll focus on making your form more interactive and dynamic using **JavaScript Event Listeners**. You’ll capture and handle user inputs seamlessly while enhancing the overall user experience.
 
+## Expected Output 
+At the end of **Day 8**, you will have knowledge of **Javascript Functions** and **Array**, and you will get an expected output like the one shown below:
+
+![Expected Output](https://gfxvsstorage.blob.core.windows.net/gfxvscontainer/Day8.gif)
+
+
 ## Overview
 In this lesson, you’ll:
 
