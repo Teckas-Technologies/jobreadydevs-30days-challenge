@@ -15,6 +15,30 @@ In this lesson, you’ll:
 2. Set up a simple `Node.js` server using `Express`.
 3. Organize your project structure to serve static files efficiently.
 
+## Explanation of the Day-9 Code:
+
+- `require('express')`: Imports the Express library, which helps in creating and managing the server.
+- `express()`: Initializes an Express application.
+- `app.use(express.static('public'))`: Middleware that serves static files (e.g., HTML, CSS, JS) from the public directory.
+- `app.get()`: Defines a route for HTTP GET requests. The root route ('/') returns a response to the browser.
+- `res.send()`: Sends a plain text or HTML response to the client.
+- `res.sendFile()`: Sends a file as a response. The __dirname variable provides the absolute path of the current directory.
+- `app.listen()`: Starts the server and listens for incoming requests on the specified port.
+
+
+## Note: Folder structure
+    ```java
+    project-directory/
+    ├── public/
+    │   ├── index.html
+    │   ├── styles.css
+    │   ├── script.js
+    │   └── teckas-logo.jpg
+    ├── server.js
+    └── package.json
+    ```
+
+
 ## Steps
 ### Step 1: Install Node.js
 1. Download Node.js:
@@ -63,19 +87,24 @@ In this lesson, you’ll:
 1. Create a new file named `server.js` in your project folder.
 2. Add the following code to set up a basic server:
     ```javascript
+    // Import the Express library
     const express = require('express');
+
+    // Create an instance of an Express application
     const app = express();
 
-    // Serve static files from the "public" directory
+    // Middleware to serve static files from the "public" folder
     app.use(express.static('public'));
 
-    // Define a basic route
+    // Define a basic route for the root URL
     app.get('/', (req, res) => {
         res.send('Welcome to the Student Management App!');
     });
 
-    // Start the server
+    // Define the port for the server to listen on
     const PORT = 3000;
+
+    // Start the server and log a message to the console
     app.listen(PORT, () => {
         console.log(`Server is running on http://localhost:${PORT}`);
     });
@@ -108,6 +137,7 @@ In this lesson, you’ll:
 ### Step 7: Serve Your Application
 1. Update the server’s root route to serve your index.html file:
     ```javascript
+    // Serve the index.html file for the root route
     app.get('/', (req, res) => {
         res.sendFile(__dirname + '/public/index.html');
     });
@@ -118,8 +148,23 @@ In this lesson, you’ll:
     node server.js
     ```
 
-    - Refresh your browser at `http://localhost:3000` to see your application served by Node.js.
+3. Refresh your browser at `http://localhost:3000` to see your application served by Node.js.
 
+
+### Step 8: Prevent Pushing the node_modules Folder to Git
+The `node_modules` folder contains all the dependencies installed via `npm`. Since these can be re-installed using the `package.json` and `package-lock.json` files, it's best to exclude `node_modules` from your Git repository to save storage space and avoid unnecessary uploads.
+
+**Follow these steps**:
+1. Create or Update the `.gitignore` File:
+    - Open your project root directory.
+    - If you don’t already have a `.gitignore` file, create one.
+
+2. Add node_modules to `.gitignore`:
+    - Open the `.gitignore` file in a text editor.
+    - Add the following line to ignore the `node_modules` folder:
+    ```bash
+    node_modules/
+    ```
 
 ## Push Your Changes to GitHub
 1. **Stage the changes**:
