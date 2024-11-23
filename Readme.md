@@ -39,10 +39,13 @@ Express.js simplifies the process of creating and managing routes, making it the
 1. Open `server.js` in your project folder.
 2. Modify it to include a `/students` route:
     ```javascript
+    // Import the Express library
     const express = require('express');
+
+    // Create an instance of an Express application
     const app = express();
 
-    // Middleware to serve static files
+    // Middleware to serve static files from the "public" folder
     app.use(express.static('public'));
 
     // Dummy data for students
@@ -53,11 +56,19 @@ Express.js simplifies the process of creating and managing routes, making it the
 
     // Route to handle GET /students
     app.get('/students', (req, res) => {
+        // Respond with the list of students in JSON format
         res.json(students);
     });
 
-    // Start the server
+    // Serve the index.html file for the root route
+    app.get('/', (req, res) => {
+        res.sendFile(__dirname + '/public/index.html');
+    });
+
+    // Define the port for the server to listen on
     const PORT = 3000;
+
+    // Start the server and log a message to the console
     app.listen(PORT, () => {
         console.log(`Server is running on http://localhost:${PORT}`);
     });
@@ -82,7 +93,9 @@ Express.js simplifies the process of creating and managing routes, making it the
 ### Step 4: Add Another Route (Optional)
 1. Add a new route to serve a custom response. For example, an `/about` route:
     ```javascript
+    // Route to handle GET /about
     app.get('/about', (req, res) => {
+        // Respond with a message
         res.send('This is the Student Management App API!');
     });
     ```
@@ -95,7 +108,9 @@ Express.js simplifies the process of creating and managing routes, making it the
 ### Step 5: Handle a Not Found Route
 1. Add `middleware` to handle invalid routes:
     ```javascript
+    // Middleware to handle undefined routes
     app.use((req, res) => {
+        // Respond with a 404 status and a custom message
         res.status(404).send('Route not found');
     });
     ```
