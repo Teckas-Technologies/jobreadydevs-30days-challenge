@@ -2,6 +2,11 @@
 
 Welcome to Day 10 of the **Job-Ready Devs 30-Day Challenge!** 🎉 Today, you’ll start building a robust backend with **Express.js**, a lightweight and flexible web framework for Node.js. By the end of this lesson, you’ll be able to set up and test basic API routes to handle requests and responses for your application.
 
+## Expected Output 
+At the end of **Day 10**, you will have knowledge of **Serve the json data to GET routes** and **Handle unwanted routes** and you will get an expected output like the one shown below:
+
+![Expected Output](https://gfxvsstorage.blob.core.windows.net/gfxvscontainer/Day10.gif)
+
 ## Overview
 In this lesson, you’ll:
 
