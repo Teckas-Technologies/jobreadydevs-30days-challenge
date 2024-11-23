@@ -19,14 +19,14 @@ JSON (JavaScript Object Notation) is the most commonly used data format for APIs
 
 ## Explanation of the Day-11 code
 
-- `parseInt()`: Converts a string to an integer. Used to parse route parameters or user input.  
-- `find()`: Searches an array and returns the first element that matches the condition.  
-- `json()`: Converts data into JSON format (used in responses and promises).  
-- `status()`: Sets the HTTP status code for a response (e.g., 200 for success, 404 for not found).  
-- `fetch()`: It is a built-in JavaScript function used to make HTTP requests to servers. It is often used to retrieve data or send data to a server via endpoints. It returns a Promise, which resolves to a Response object representing the response to the request.  
-- `then()`: It is a method available on a Promise that allows you to define a callback function to handle the resolved value of the Promise. For example, when a fetch() call is successful, then() can be used to process and use the returned response. It also allows chaining multiple steps after a successful response.  
-- `catch()`: It is a method available on a Promise to handle errors or rejections in the Promise chain. If any step in the Promise chain (like `fetch()` or `then()`) fails, `catch()` provides a way to execute a callback function with the error. This ensures that unexpected issues, like network failures, are properly handled.  
-- `error`: Represents an error that occurred (e.g., during fetch or processing).  
+- **parseInt()**: Converts a string to an integer. Used to parse route parameters or user input.  
+- **find()**: Searches an array and returns the first element that matches the condition.  
+- **json()**: Converts data into `JSON` format (used in responses and promises).  
+- **status()**: Sets the HTTP status code for a response (e.g., `200` for success, `404` for not found).  
+- **fetch()**: It is a built-in JavaScript function used to make HTTP requests to servers. It is often used to retrieve data or send data to a server via endpoints. It returns a Promise, which resolves to a Response object representing the response to the request.  
+- **then()**: It is a method available on a Promise that allows you to define a callback function to handle the resolved value of the Promise. For example, when a `fetch()` call is successful, `then()` can be used to process and use the returned response. It also allows chaining multiple steps after a successful response.  
+- **catch()**: It is a method available on a Promise to handle errors or rejections in the Promise chain. If any step in the Promise chain (like `fetch()` or `then()`) fails, `catch()` provides a way to execute a callback function with the error. This ensures that unexpected issues, like network failures, are properly handled.  
+- **error**: Represents an `error` that occurred (e.g., during fetch or processing).  
 
 ## Steps
 ### Step 1: Update the /students Endpoint
