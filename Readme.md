@@ -2,6 +2,11 @@
 
 Welcome to Day 11 of the **Job-Ready Devs 30-Day Challenge!** 🎉 Today, we’ll create a fully functional **Student API** to serve JSON data. This will allow your frontend to fetch and display dynamic student information, bringing your application closer to real-world functionality.
 
+## Expected Output 
+At the end of **Day 11**, you will have knowledge of **GET the JSON data by unique ID** and **Fetch JSON data from frontend** and you will get an expected output like the one shown below:
+
+![Expected Output](https://gfxvsstorage.blob.core.windows.net/gfxvscontainer/Day11.gif)
+
 ## Overview
 In this lesson, you’ll:
 
