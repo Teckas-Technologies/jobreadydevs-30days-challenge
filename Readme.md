@@ -17,6 +17,17 @@ JSON (JavaScript Object Notation) is the most commonly used data format for APIs
 2. Implement dynamic routes to fetch individual student records.
 3. Prepare for frontend-backend integration with real-time data retrieval.
 
+## Explanation of the Day-11 code
+
+- `parseInt()`: Converts a string to an integer. Used to parse route parameters or user input.  
+- `find()`: Searches an array and returns the first element that matches the condition.  
+- `json()`: Converts data into JSON format (used in responses and promises).  
+- `status()`: Sets the HTTP status code for a response (e.g., 200 for success, 404 for not found).  
+- `fetch()`: It is a built-in JavaScript function used to make HTTP requests to servers. It is often used to retrieve data or send data to a server via endpoints. It returns a Promise, which resolves to a Response object representing the response to the request.  
+- `then()`: It is a method available on a Promise that allows you to define a callback function to handle the resolved value of the Promise. For example, when a fetch() call is successful, then() can be used to process and use the returned response. It also allows chaining multiple steps after a successful response.  
+- `catch()`: It is a method available on a Promise to handle errors or rejections in the Promise chain. If any step in the Promise chain (like `fetch()` or `then()`) fails, `catch()` provides a way to execute a callback function with the error. This ensures that unexpected issues, like network failures, are properly handled.  
+- `error`: Represents an error that occurred (e.g., during fetch or processing).  
+
 ## Steps
 ### Step 1: Update the /students Endpoint
 1. Switch to the "Day-11" Branch
@@ -28,6 +39,7 @@ JSON (JavaScript Object Notation) is the most commonly used data format for APIs
 2. Open your `server.js` file.
 3. Ensure you have dummy student data or add the following:
     ```javascript
+    // Array of student objects with id, name, and email
     const students = [
         { id: 1, name: 'John Doe', email: 'john.doe@example.com' },
         { id: 2, name: 'Jane Smith', email: 'jane.smith@example.com' },
@@ -37,8 +49,9 @@ JSON (JavaScript Object Notation) is the most commonly used data format for APIs
 
 4. Modify the `/students` route to return the student data as JSON:
     ```javascript
+    // Route to get all students
     app.get('/students', (req, res) => {
-        res.json(students);
+        res.json(students); // Send the array of students as a JSON response
     });
     ```
 
@@ -68,14 +81,15 @@ JSON (JavaScript Object Notation) is the most commonly used data format for APIs
 ### Step 3: Add a Route to Serve a Single Student
 1. Add a new route to retrieve a student by their ID:
     ```javascript
+    // Route to get a student by ID
     app.get('/students/:id', (req, res) => {
-        const studentId = parseInt(req.params.id); // Parse ID from request parameters
-        const student = students.find(s => s.id === studentId); // Find student by ID
+        const studentId = parseInt(req.params.id); // Convert the id from the request parameter to an integer
+        const student = students.find(s => s.id === studentId); // Search for the student with the matching id
 
         if (student) {
-            res.json(student); // Return the student data
+            res.json(student); // Send the matched student data as JSON
         } else {
-            res.status(404).json({ error: 'Student not found' }); // Return a 404 error if not found
+            res.status(404).json({ error: 'Student not found' }); // Send a 404 response if no student is found
         }
     });
     ```
@@ -105,13 +119,14 @@ JSON (JavaScript Object Notation) is the most commonly used data format for APIs
 ### Step 5: Integrate with the Frontend - (Optional)
 1. Open `script.js` and add a fetch request to retrieve the student data:
     ```javascript
+    // Fetch all students from the server
     fetch('/students')
-        .then(response => response.json())
+        .then(response => response.json()) // Parse the JSON data from the server response
         .then(data => {
-            console.log(data); // Log the fetched student data
+            console.log(data);  // Log the student data to the console
         })
         .catch(error => {
-            console.error('Error fetching students:', error);
+            console.error('Error fetching students:', error); // Log an error if the fetch fails
         });
     ```
 
