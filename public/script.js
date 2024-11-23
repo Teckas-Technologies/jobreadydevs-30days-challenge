@@ -9,14 +9,14 @@ const resetButton = document.querySelector('button[type="reset"]');
 const students = []; // Array to store student data
 
 
-// Fetch studens list from backend and log in the console.
+// Fetch all students from the server
 fetch('/students')
-    .then(response => response.json())
+    .then(response => response.json()) // Parse the JSON data from the server response
     .then(data => {
-        console.log(data); // Log the fetched student data
+        console.log(data);  // Log the student data to the console
     })
     .catch(error => {
-        console.error('Error fetching students:', error);
+        console.error('Error fetching students:', error); // Log an error if the fetch fails
     });
 
 

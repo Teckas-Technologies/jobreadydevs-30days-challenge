@@ -18,6 +18,14 @@ The Fetch API is a modern, promise-based way to interact with APIs. It’s an es
 2. Dynamically display the retrieved data on the frontend.
 3. Prepare the app for future API interactions like creating and updating data.
 
+## Explanation of Functions
+1. **Error()**
+    - The `Error()` constructor creates an error object that represents a runtime error. It can be used to define custom error messages and throw them when something goes wrong. For example, new Error('Custom error message') generates an error that can be caught and handled in a `try-catch` block or a `.catch()` method.
+
+2. **forEach()**
+    - The `forEach()` method is used to execute a provided function once for each element in an array. It is commonly used for iterating over arrays and performing operations on each element. Unlike `map()`, it does not return a new array but is primarily used for side effects like `DOM` manipulation or logging.
+
+
 ## Steps
 ### Step 1: Update the Frontend Structure
 1. Switch to the "Day-12" Branch
@@ -43,18 +51,22 @@ The Fetch API is a modern, promise-based way to interact with APIs. It’s an es
 1. Open your `script.js` file.
 2. Use the Fetch API to make a GET request to the `/students` endpoint:
     ```javascript
+    // Fetch student data from the server
     fetch('/students')
         .then(response => {
+            // Check if the server response is valid
             if (!response.ok) {
+                // Throw an error if the response is not valid
                 throw new Error('Network response was not ok');
             }
-            return response.json();
+            return response.json(); // Parse and return the response as JSON
         })
         .then(data => {
             console.log(data); // Log the fetched student data for debugging
             renderStudentList(data); // Call a function to display the data
         })
         .catch(error => {
+            // Handle errors that occur during fetch or JSON parsing
             console.error('Error fetching students:', error);
         });
     ```
@@ -64,14 +76,16 @@ The Fetch API is a modern, promise-based way to interact with APIs. It’s an es
 ### Step 3: Create a Function to Render the Student List
 1. In `script.js`, write the `renderStudentList` function to populate the list dynamically:
     ```javascript
+    // Function to render the student list in the DOM
     function renderStudentList(students) {
-        const studentList = document.querySelector('#student-list ul');
+        const studentList = document.querySelector('#student-list ul'); // Select the student list container
         studentList.innerHTML = ''; // Clear the list before rendering
 
+        // Iterate over the array of students
         students.forEach(student => {
-            const listItem = document.createElement('li');
-            listItem.textContent = `${student.name} - ${student.email}`;
-            studentList.appendChild(listItem);
+            const listItem = document.createElement('li'); // Create a new list item element
+            listItem.textContent = `${student.name} - ${student.email}`; // Set the content to the student's name and email
+            studentList.appendChild(listItem); // Append the list item to the student list
         });
     }
     ```
@@ -104,8 +118,8 @@ The Fetch API is a modern, promise-based way to interact with APIs. It’s an es
         })
         .catch(error => {
             const studentList = document.querySelector('#student-list ul');
-            studentList.innerHTML = '<li>Error loading student data</li>';
-            console.error('Error fetching students:', error);
+            studentList.innerHTML = '<li>Error loading student data</li>'; // Display error message in the UI
+            console.error('Error fetching students:', error); // Log the error for debugging
         });
     ```
 
