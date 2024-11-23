@@ -2,6 +2,12 @@
 
 Welcome to Day-9 of the **Job-Ready Devs 30-Day Challenge!** 🎉 Today, we’ll dive into **Node.js**, the powerful runtime environment that allows JavaScript to run on the server. By setting up a basic Node.js server, you’ll lay the foundation for handling dynamic requests, serving files, and more in the upcoming lessons.
 
+## Expected Output 
+At the end of **Day 9**, you will have knowledge of **Node JS project creation**, **Define the routes** and **Serving HTML files from backend** and you will get an expected output like the one shown below:
+
+![Expected Output](https://gfxvsstorage.blob.core.windows.net/gfxvscontainer/Day9.gif)
+
+
 ## Overview
 In this lesson, you’ll:
 
