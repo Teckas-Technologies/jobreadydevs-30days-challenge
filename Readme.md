@@ -2,6 +2,11 @@
 
 Welcome to Day 12 of the **Job-Ready Devs 30-Day Challenge!** 🎉 Today, we’ll bridge the gap between the **frontend** and **backend** using JavaScript’s **Fetch API**. You’ll retrieve data from your server and dynamically display it on your frontend, making your app interactive and user-friendly.
 
+## Expected Output 
+At the end of **Day 12**, you will have knowledge of **Fetch JSON data from frontend** and **Show the response in HTML format** and you will get an expected output like the one shown below:
+
+![Expected Output](https://gfxvsstorage.blob.core.windows.net/gfxvscontainer/Day12.gif)
+
 ## Overview
 In this lesson, you’ll:
 
