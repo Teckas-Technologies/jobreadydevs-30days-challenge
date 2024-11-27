@@ -118,16 +118,19 @@ MongoDB’s flexibility, scalability, and `JSON`-like structure make it ideal fo
 ### Step 3: Connect MongoDB to Your Node.js Server
 1. Open your `server.js` file.
 2. Import Mongoose and connect to your MongoDB instance:
-    ```javascript
-    const mongoose = require('mongoose');
+   ```javascript
+   // Import the mongoose library to interact with MongoDB
+   const mongoose = require('mongoose');
 
-    // Replace with your local or cloud-based MongoDB URI
-    const mongoURI = 'mongodb://localhost:27017/student-management';
+   // Define the MongoDB connection URI
+   // Replace 'localhost:27017/student-management' with your MongoDB URI (local or cloud-based)
+   const mongoURI = 'mongodb://localhost:27017/student-management';
 
-    mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
-        .then(() => console.log('MongoDB connected...'))
-        .catch(err => console.error('MongoDB connection error:', err));
-    ```
+   // Connect to the MongoDB database using mongoose
+   mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
+      .then(() => console.log('MongoDB connected...')) // If the connection is successful, log a confirmation message
+      .catch(err => console.error('MongoDB connection error:', err)); // If the connection fails, log an error message with the details
+   ```
 
 ### Step 4: Test the Connection
 1. Start your `Node.js` server:
