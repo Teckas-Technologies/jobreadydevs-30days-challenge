@@ -2,6 +2,12 @@
 
 Welcome to Day 15 of the **Job-Ready Devs 30-Day Challenge!** 🎉 Today, you’ll take a big step toward building a full-stack application by integrating a **MongoDB database** with your **Node.js server**. This allows you to store, retrieve, and manage your data persistently, unlocking the power of database-backed applications.
 
+
+## Expected Output 
+At the end of **Day 15**, you will have knowledge of **Database**, **MongoDB** and connect the mongodb to Node.js server and you will get an expected output like the one shown below:
+
+![Expected Output](https://gfxvsstorage.blob.core.windows.net/gfxvscontainer/Day15.png)  
+
 ## Overview
 In this lesson, you’ll:
 
