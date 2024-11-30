@@ -102,7 +102,7 @@ Mongoose models act as a bridge between your application and the database. They 
 3. Add a route to create a dummy student record for testing:
     ```javascript
     // Define a POST route to handle adding a student
-    app.post('/add-student', async (req, res) => {
+    app.post('/add-student', async (req, res) => { // If you are using browser to create a student then call get method app.get()
         try {
             // Create a new instance of the Student model with sample data
             const student = new Student({
