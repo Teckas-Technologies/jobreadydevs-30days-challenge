@@ -1,194 +1,244 @@
-# 🚀 Welcome to the Job-Ready Devs 30-Day Challenge!
+# Day 18: Integrating CRUD API with the Frontend
 
-Hey future developers! 👋 We’re thrilled to kick off this 30-Day Challenge where you’ll gain practical, job-ready skills by building a complete full-stack Student Management Web Application.
+Welcome to Day 18 of the **Job-Ready Devs 30-Day Challenge**! 🎉 Today, we’ll fully integrate the CRUD operations built in the backend with the frontend. You’ll use the Fetch API to interact with your backend and dynamically update the UI based on user actions.
 
-## Daily work flow
-### Step 1: Daily Materials & Assignments
-📌 Daily Lesson Materials & Assignments Link will be posted on the [**Job-Ready Devs**](https://t.me/jobreadydevs) Telegram Channel!
+## Overview
+In this lesson, you’ll:
 
-### Step 2: Open the Assignment
-1️⃣ Click the **assignment link** in Telegram to open classroom.github.com.  
-2️⃣ Don’t have a GitHub account? [Create one](https://github.com/signup)!  
-3️⃣ Sign in using your **GitHub** account.  
-4️⃣ Click the "Accept Assignment" button.  
+1. **Learn to use Fetch API**: Connect the frontend to the backend CRUD API.
+2. **Implement full CRUD operations on the frontend**: `Add`, `edit`, and `delete` student records.
+3. **Update the UI dynamically**: Ensure seamless interaction between the user and the app.  
 
-### Step 3: Access Forked Repository
-👉 The classroom generates a forked repository URL for you.  
-👉 Click on the URL to visit your forked repository.  
+*Why Integrate CRUD Operations?*  
+Integrating CRUD operations connects your frontend and backend, allowing real-time updates and user interaction. This is a vital step in building fully functional, interactive applications.
 
-### Step 4: Copy the Repository URL
-👉 On your forked repository page, click the "**Code**" button.  
-👉 Copy the **HTTPS URL** shown for the repository.  
+## Objectives
+1. Use Fetch API methods (`GET`, `POST`, `PUT`, `DELETE`) to interact with backend APIs.
+2. Build buttons and forms to handle `CRUD` actions directly from the frontend.
+3. Update the UI dynamically after each operation.
 
-### Step 5: Clone the Repository
-👉 Open your **terminal** and run the command:  
-```bash
-git clone <copied_url_from_repository>
-```
 
-### Step 6: Open in VS Code
-👉 Open the cloned repository folder in **VS Code**.
+**What is querySelectorAll?**
+    `querySelectorAll` is a JavaScript DOM method that allows you to select and retrieve all elements from the DOM that match a specified CSS selector. It returns a static NodeList, which means the list of elements does not update automatically if the DOM changes.
 
-### Step 7: Checkout the Day’s Branch
-👉 Run the command to switch to the specific day’s branch:
-```bash
-git checkout Day-1
-```
 
-### Step 8: Learn and Code
-📖 Learn the topics in the day’s branch `README.md`.  
-💻 Complete the assignment using the `starter code` provided.
+## Steps
 
-### Step 9: Verify Output
-✔️ Check that your output matches the `expected output`.
+### Step 1: Update the Frontend Structure
+1. Switch to the "Day-18" Branch
+    - Switch to the "Day-18" branch by running the following command in the `terminal`
+    ```bash
+     git checkout Day-18
+    ```
 
-### Step 10: Submit Your Code
-👉 Run these commands to submit your work:
-```bash
-git add .
-git commit -m "your commit message"
-git push origin Day-1
-git push origin Day-1:main
-```
+2. Open your `index.html` file.
+3. Modify the student list section to include buttons for editing and deleting records:
+    ```html
+    <section id="student-list">
+        <h2>Student List</h2>
+        <ul></ul>
+    </section>
+
+    <section id="add-student-form">
+        <h2>Add Student</h2>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <button type="submit">Add Student</button>
+        </form>
+    </section>
+    ```
+
+### Step 2: Fetch and Display Students
+1. Open your `script.js` file.
+2. Update the `renderStudentList` function to include Edit and Delete buttons:
+    ```javascript
+    function renderStudentList(students) {
+        // Select the parent element where the student list will be rendered
+        const studentList = document.querySelector('#student-list ul');
+        
+        // Clear the existing content of the list to avoid duplicates
+        studentList.innerHTML = '';
+
+        // Iterate through the array of student objects
+        students.forEach(student => {
+            // Create a new list item element for each student
+            const listItem = document.createElement('li');
+
+            // Set the inner HTML of the list item with student details and buttons
+            listItem.innerHTML = `
+                ${student.name} - ${student.email} 
+                <button class="edit" data-id="${student._id}">Edit</button>
+                <button class="delete" data-id="${student._id}">Delete</button>
+            `;
+
+            // Append the list item to the parent student list element
+            studentList.appendChild(listItem);
+        });
+
+        // Attach event listeners to the newly added buttons (e.g., Edit and Delete)
+        attachEventListeners();
+    }
+    ```
+
+3. Fetch students from the backend and display them:
+    ```javascript
+    function fetchStudents() {
+        fetch('/students')
+            .then(response => response.json())
+            .then(data => renderStudentList(data))
+            .catch(error => console.error('Error fetching students:', error));
+    }
+
+    fetchStudents(); // Load students on page load
+    ```
+
+### Step 3: Add a Student
+1. Handle form submissions to add a new student:
+    ```javascript
+    // Select the student form element from the DOM
+    const form = document.querySelector('#add-student-form form');
+
+    // Add a 'submit' event listener to the form
+    form.addEventListener('submit', (event) => {
+        // Prevent the default form submission behavior (page reload)
+        event.preventDefault();
+
+        // Get the value of the 'name' input field and remove whitespace
+        const name = document.querySelector('#name').value.trim();
+
+        // Get the value of the 'email' input field and remove whitespace
+        const email = document.querySelector('#email').value.trim();
+
+        // Make a POST request to the '/students' endpoint to add a new student
+        fetch('/students', {
+            method: 'POST', // Specify the HTTP method as POST
+            headers: { 'Content-Type': 'application/json' }, // Specify the content type as JSON
+            body: JSON.stringify({ name, email }) // Send the name and email as JSON in the request body
+        })
+            .then(response => response.json()) // Parse the JSON response
+            .then(() => {
+                fetchStudents(); // Refresh the list of students by fetching the updated data
+                form.reset(); // Clear the form fields after successful submission
+            })
+            .catch(error => console.error('Error adding student:', error)); // Log any errors to the console
+    });
+    ```
+
+### Step 4: Edit a Student
+1. Add functionality to edit a student:
+    ```javascript
+    // Function to edit an existing student's details
+    function editStudent(id, name, email) {
+        // Send a PUT request to the `/students/:id` endpoint with the student's ID
+        fetch(`/students/${id}`, {
+            method: 'PUT', // Specify the HTTP method as PUT for updating a resource
+            headers: { 'Content-Type': 'application/json' }, // Set the request headers to indicate JSON content
+            body: JSON.stringify({ name, email }) // Send the updated name and email as JSON in the request body
+        })
+            .then(response => response.json()) // Parse the JSON response from the server
+            .then(() => fetchStudents()) // Refresh the student list by fetching the updated data
+            .catch(error => console.error('Error updating student:', error)); // Log any errors that occur during the request
+    }
+    ```
+
+2. Add an event listener to handle Edit button clicks:
+    ```javascript
+    // Function to attach event listeners to edit buttons
+    function attachEventListeners() {
+        // Select all elements with the 'edit' class and iterate over them
+        document.querySelectorAll('.edit').forEach(button => {
+            // Add a click event listener to each 'edit' button
+            button.addEventListener('click', () => {
+                // Get the student's ID from the button's dataset
+                const id = button.dataset.id;
+                // Prompt the user to enter a new name for the student
+                const name = prompt('Enter new name:');
+                // Prompt the user to enter a new email for the student
+                const email = prompt('Enter new email:');
+                // If both name and email are provided, call the editStudent function
+                if (name && email) {
+                    editStudent(id, name, email); // Update the student's details
+                }
+            });
+        });
+    }
+    ```
+
+### Step 5: Delete a Student
+1. Add functionality to delete a student:
+    ```javascript
+    // Function to delete a student by their ID
+    function deleteStudent(id) {
+        // Send a DELETE request to the `/students/:id` endpoint with the student's ID
+        fetch(`/students/${id}`, {
+            method: 'DELETE' // Specify the HTTP method as DELETE for removing a resource
+        })
+            .then(() => fetchStudents()) // Refresh the student list by fetching the updated data
+            .catch(error => console.error('Error deleting student:', error)); // Log any errors that occur during the request
+    }
+    ```
+
+2. Add an event listener to handle Delete button clicks:
+    ```javascript
+    // Function to attach event listeners to delete buttons
+    function attachEventListeners() {
+        // Select all elements with the 'delete' class and iterate over them
+        document.querySelectorAll('.delete').forEach(button => {
+            // Add a click event listener to each 'delete' button
+            button.addEventListener('click', () => {
+                // Get the student's ID from the button's dataset
+                const id = button.dataset.id;
+                // Display a confirmation dialog to the user
+                if (confirm('Are you sure you want to delete this student?')) {
+                    // If the user confirms, call the deleteStudent function
+                    deleteStudent(id); // Remove the student with the specified ID
+                }
+            });
+        });
+    }
+    ```
+
+### Step 6: Test the CRUD Functionality
+1. Start your server:
+    ```bash
+    node server.js
+    ```
+
+2. Open your app in a browser.
+3. Test the following:
+    - **Add Student**: Add a new student using the form.
+    - **Edit Student**: Click the Edit button and update the student details.
+    - **Delete Student**: Click the Delete button and confirm the deletion.
+    - Verify that the frontend updates dynamically after each operation.
+
+
+## Push Your Changes to GitHub
+1. **Stage the changes**:
+    ```bash
+    git add .
+    ```
+
+2. **Commit the changes with a descriptive message**:
+    ```bash
+    git commit -m "Integrate CRUD API with frontend"
+    ```
+
+3. **Push the changes to your repository**:
+    ```bash
+    git push origin Day-18
+    ```
+
+4. **Push the final code to main branch**:
+    - Upload your final code to your `GitHub` main branch:
+    ```bash
+    git push origin Day-18:main --force
+    ```
 
 ---
 
-🚀 Once you push your code to GitHub, your assignment is successfully submitted! 🎉
+# Excellent Job! 🎉
 
----
-
-# Job-Ready Devs 30-Day Challenge Syllabus
-
-## Week 1: Frontend Foundations with HTML, CSS, and JavaScript
-### Goal: 
-- Build a static frontend for the **Student Management App**, covering essential `HTML`, `CSS`, and `JavaScript` basics.
-
-**Day 1**: Environment Setup and Hello, World!
-- Set up `GitHub`, `Visual Studio Code`, `Git`, and `Node.js`.
-- Create and push a basic "Hello, World!" `HTML` and `JavaScript` project.
-
-**Day 2**: HTML Basics + App Structure
-- Build the basic structure of the app: navigation bar, student list section, and form.
-- Create an HTML layout with sections for adding and viewing students.
-
-**Day 3**: CSS Basics + Styling the Interface
-- Style the app using CSS for layout, colors, and fonts.
-- Focus on styling the form and list sections for a clean look.  
-
-**Day 4**: JavaScript Basics + DOM Manipulation  
-- Learn basic `JavaScript` and `DOM` manipulation.
-- Use JavaScript to capture form inputs and display them on the page.
-
-**Day 5**: JavaScript Functions + Dynamic Rendering
-- Create functions to handle data and `dynamically render` a student list.
-- Implement a `function` that displays student data in a structured list format.
-
-**Day 6**: GitHub Portfolio Setup + Documentation Basics
-- Set up a `README` file in GitHub, add `project documentation`, and push updates.
-- Practice writing README instructions for better GitHub portfolio visibility.
-
-**Day 7**: Weekly Recap + Q&A
-- Review progress, troubleshoot issues, and provide a Q&A session.
-
----
-
-## Week 2: Adding Interactivity and Creating a Backend with Node.js and Express
-### Goal: 
-- Add interactivity to the frontend and set up a Node.js backend to handle data requests.
-
-**Day 8**: JavaScript Event Listeners + Data Handling
-- Improve form functionality with `JavaScript event listeners` to capture user input.
-- Create an interactive form with `submit` and `reset` buttons.
-
-**Day 9**: Introduction to Node.js + Setting Up a Basic Server
-- Set up a simple `Node.js` server to serve the application and prepare for backend tasks.
-
-**Day 10**: Express.js Basics + Creating Routes
-- Install `Express.js` and set up basic API routes.
-- Create routes to handle requests, such as “GET /students.”
-
-**Day 11**: Working with JSON Data + Building the Student API
-- Serve JSON data from the `backend` to the frontend.
-- Create an endpoint to retrieve a list of students in JSON format.
-
-**Day 12**: Fetch API + Connecting Frontend and Backend
-- Use JavaScript’s `Fetch API` to retrieve data from the backend and display it on the frontend.
-
-**Day 13**: Git Workflow + Branching
-- Practice branching in Git for different features and merging branches back to main.
-- Learn `Git commands` for a collaborative coding workflow.
-
-**Day 14**: Weekly Recap + Group Code Review
-- Review project progress and provide feedback on submissions.
-
----
-
-## Week 3: Database Integration and CRUD Operations with MongoDB
-### Goal: 
-- Implement data persistence with MongoDB and create a fully functional API with CRUD operations.
-
-**Day 15**: Introduction to MongoDB + Setting Up a Database
-- Learn database basics and set up a `MongoDB` instance.
-- Connect MongoDB to the `Node.js` server.
-
-**Day 16**: Creating a Data Model with Mongoose
-- Define a student data model using `Mongoose`.
-- Set up a `schema` to store and manage student data.
-
-**Day 17**: CRUD Operations (Create, Read, Update, Delete) with Express and MongoDB
-- Build `API` routes for `CRUD operations` on student data.
-- Test each route with sample data.
-
-**Day 18**: Integrating CRUD API with the Frontend
-- Use Fetch API methods to connect frontend `CRUD operations` with the backend.
-- Add buttons and functions for `adding`, `updating`, and `deleting` student records.
-
-**Day 19**: Error Handling and Validation
-- Implement basic error handling and validation in Express.
-- Ensure data fields are completed correctly when submitting student data.
-
-**Day 20**: Testing and Debugging the Application
-- Conduct end-to-end testing for all `CRUD features`, fixing any issues encountered.
-
-**Day 21**: Weekly Recap + Feedback
-- Review project progress and share feedback with participants.
-
----
-
-## Week 4: Final Touches, Deployment, and Portfolio Building
-### Goal: 
-- Polish the app, deploy it live, and create a professional GitHub portfolio.
-
-**Day 22**: User Authentication Basics (Optional)
-- (Optional) Add simple `authentication` with a login form for added functionality.
-
-**Day 23**: UI/UX Enhancements and Final Touches
-- Improve the app’s visual design and user experience.
-- Make adjustments to CSS and add user feedback for smoother interaction.
-
-**Day 24**: Final Testing and Quality Assurance
-- Perform end-to-end testing to ensure app quality and functionality.
-
-**Day 25**: Deployment on Heroku or GitHub Pages
-- Deploy the final application live using `Heroku` or `GitHub` Pages.
-- Ensure the deployed app is fully functional.
-
-**Day 26**: Writing a Professional `README` and Project Documentation
-- Document the project thoroughly with setup instructions, features, and usage tips.
-
-**Day 27**: Portfolio and LinkedIn Profile Enhancement
-- Update GitHub with completed project files and create a portfolio showcase.
-- Share the project on `LinkedIn` to demonstrate skills.
-
-**Day 28**: Final Code Review + Group Discussion
-- Conduct a final code review session and group discussion to wrap up the project.
-
-**Day 29**: Internship Challenge Announcement + Preparation
-- Introduce the `7-day Internship Challenge` with details on requirements and goals.
-
-**Day 30**: Reflection and Next Steps
-- Reflect on the journey, share accomplishments, and discuss future learning opportunities.
-
----
-
-### All the best 🚀
+You’ve successfully connected your frontend **CRUD operations** to the backend using the Fetch API. Your app is now interactive and fully functional! Tomorrow, we’ll explore advanced features to enhance your application even further. 🚀
