@@ -64,7 +64,12 @@ CRUD operations form the backbone of any application. Whether it’s saving a us
     const Student = require('./models/Student');
     ```
 
-4. Add the following routes:
+4. Use the middleware to parse the JSON from request
+    ```javascript
+    app.use(express.json()); // Middleware to parse JSON request bodies
+    ```
+
+5. Add the following routes:
 
 **Create (POST) a New Student**
 1. Add a POST `/students` route:
