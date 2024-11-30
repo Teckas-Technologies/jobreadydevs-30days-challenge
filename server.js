@@ -16,8 +16,8 @@ mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
     .catch(err => console.error('MongoDB connection error:', err)); // If the connection fails, log an error message with the details
 
 
-// Define a POST route to handle adding a student & If you are using browser to create a student then call get method
-app.get('/add-student', async (req, res) => {
+// Define a POST route to handle adding a student
+app.post('/add-student', async (req, res) => { // If you are using browser to create a student then call get method app.get()
     try {
         // Create a new instance of the Student model with sample data
         const student = new Student({
