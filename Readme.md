@@ -84,10 +84,10 @@ Mongoose models act as a bridge between your application and the database. They 
     module.exports = Student;
     ```
 
-2. Key Elements in the Code:
-    `name`: String, required to ensure every student has a name.
-    `email`: String, required, must be unique, prevents duplicate entries.
-    `createdAt`: Automatically stores the timestamp when the record is created.  
+2. Key Elements in the Code:  
+    - `name`: String, required to ensure every student has a name.  
+    - `email`: String, required, must be unique, prevents duplicate entries.  
+    - `createdAt`: Automatically stores the timestamp when the record is created.  
 
 3. Save the file.
 
