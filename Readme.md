@@ -2,6 +2,11 @@
 
 Welcome to Day 16 of the **Job-Ready Devs 30-Day Challenge!** 🎉 Today, you’ll learn how to define a **data model** using **Mongoose**, a key step toward managing structured and reliable data in your application. By creating a schema and model, you’ll ensure consistent data storage and enable easy interaction with your MongoDB database.
 
+## Expected Output 
+At the end of **Day 16**, you will have knowledge of **model & schema** and you will get an expected output like the one shown below:
+
+![Expected Output](https://gfxvsstorage.blob.core.windows.net/gfxvscontainer/Day16.png)  
+
 ## Overview
 In this lesson, you’ll:
 
