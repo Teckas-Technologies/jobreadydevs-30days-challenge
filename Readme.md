@@ -10,8 +10,14 @@ Welcome to Day 23 of the **Job-Ready Devs 30-Day Challenge**! 🎉 Today, you’
 
 ## Steps
 ### Step 1: Enhance the Visual Design with CSS
-1. Open your `styles.css` file.
-2. Add or update styles for key elements:
+1. Switch to the "Day-23" Branch
+    - Switch to the "Day-23" branch by running the following command in the `terminal`
+    ```bash
+     git checkout Day-23
+    ```
+
+2. Open your `styles.css` file.
+3. Add or update styles for key elements:
 - Navigation Bar:
     ```css
     nav {
