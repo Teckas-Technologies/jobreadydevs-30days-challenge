@@ -16,9 +16,14 @@ Even though today's task is optional, it's a valuable learning experience and an
 
 ## Steps
 #### Step 1: Add a Login Form to the Frontend
-1. Open your `index.html` file.
+1. Switch to the "Day-22" Branch
+    - Switch to the "Day-22" branch by running the following command in the `terminal`
+    ```bash
+     git checkout Day-22
+    ```
+2. Open your `index.html` file.
 
-2. Add a login form at the top of the page:
+3. Add a login form at the top of the page:
     ```html
     <section id="login-form">
         <h2>Login</h2>
@@ -33,7 +38,7 @@ Even though today's task is optional, it's a valuable learning experience and an
     </section>
     ```
 
-3. **Explanation**:
+4. **Explanation**:
 - The `<form>` element collects user credentials (username and password).
 - The `<p>` element with id="login-message" will display success or error messages after login attempts.
 
