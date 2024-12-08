@@ -78,10 +78,9 @@ Welcome to Day 21 of the **Job-Ready Devs 30-Day Challenge!** Today, we’ll rev
 ---
 
 ### Step 5: Document Your Progress
-1. Update your `README.md` file to include:
+1. Update your `MyREADME.md` file to include:
    - A summary of features implemented during Week 3.
    - Any feedback received and how it was applied.
-   - Goals for Week 4.
 
 2. Push your updated documentation to GitHub:
    ```bash
