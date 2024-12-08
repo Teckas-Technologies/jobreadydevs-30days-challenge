@@ -2,6 +2,11 @@
 
 Welcome to Day 18 of the **Job-Ready Devs 30-Day Challenge**! 🎉 Today, we’ll fully integrate the CRUD operations built in the backend with the frontend. You’ll use the Fetch API to interact with your backend and dynamically update the UI based on user actions.
 
+## Expected Output 
+At the end of **Day 18**, you will have knowledge of **Integrating Backend CRUD APIs to Frontend** and you will get an expected output like the one shown below:
+
+![Expected Output](https://gfxvsstorage.blob.core.windows.net/gfxvscontainer/Day18.gif)  
+
 ## Overview
 In this lesson, you’ll:
 
@@ -39,7 +44,7 @@ Integrating CRUD operations connects your frontend and backend, allowing real-ti
         <ul></ul>
     </section>
 
-    <section id="add-student-form">
+    <section id="add-student">
         <h2>Add Student</h2>
         <form>
             <label for="name">Name:</label>
@@ -50,6 +55,47 @@ Integrating CRUD operations connects your frontend and backend, allowing real-ti
         </form>
     </section>
     ```
+
+4. Open your `styles.css` file.
+5. Add the below code to design the edit & delete btns
+  ```css
+  /* Individual list item styles in Student List */
+  #student-list ul li {
+      padding: 0.5rem 0; /* Add vertical padding to list items */
+      border-bottom: 1px solid #ddd; /* Add a divider between list items */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  }
+
+  /* Update & Delete buttons design */
+  .action-btns {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+  }
+
+  .delete {
+      width: 6rem; /* Set fixed width for the button */
+      padding: 0.5rem 1rem; /* Add padding to the button */
+      background-color: #e84850; /* Set a light blue background color */
+      color: white; /* Set button text color to white */
+      border: none; /* Remove default border */
+      border-radius: 5px; /* Round the corners of the button */
+      cursor: pointer; /* Show pointer cursor on hover */
+  }
+
+  .edit {
+      width: 6rem; /* Set fixed width for the button */
+      padding: 0.5rem 1rem; /* Add padding to the button */
+      background-color: #48e890; /* Set a light blue background color */
+      color: white; /* Set button text color to white */
+      border: none; /* Remove default border */
+      border-radius: 5px; /* Round the corners of the button */
+      cursor: pointer; /* Show pointer cursor on hover */
+  }
+  ```
 
 ### Step 2: Fetch and Display Students
 1. Open your `script.js` file.
@@ -102,7 +148,7 @@ Integrating CRUD operations connects your frontend and backend, allowing real-ti
 1. Handle form submissions to add a new student:
     ```javascript
     // Select the student form element from the DOM
-    const form = document.querySelector('#add-student-form form');
+    const form = document.querySelector('#add-student form');
 
     // Add a 'submit' event listener to the form
     form.addEventListener('submit', (event) => {
