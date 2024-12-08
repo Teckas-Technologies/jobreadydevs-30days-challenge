@@ -69,9 +69,11 @@ Integrating CRUD operations connects your frontend and backend, allowing real-ti
 
             // Set the inner HTML of the list item with student details and buttons
             listItem.innerHTML = `
-                ${student.name} - ${student.email} 
-                <button class="edit" data-id="${student._id}">Edit</button>
-                <button class="delete" data-id="${student._id}">Delete</button>
+                <p>${student.name} - ${student.email}</p>
+                <div class="action-btns">
+                    <button class="edit" data-id="${student._id}">Edit</button>
+                    <button class="delete" data-id="${student._id}">Delete</button>
+                </div>
             `;
 
             // Append the list item to the parent student list element
@@ -79,7 +81,8 @@ Integrating CRUD operations connects your frontend and backend, allowing real-ti
         });
 
         // Attach event listeners to the newly added buttons (e.g., Edit and Delete)
-        attachEventListeners();
+        attachEventListeners1();
+        attachEventListeners2();
     }
     ```
 
@@ -147,7 +150,7 @@ Integrating CRUD operations connects your frontend and backend, allowing real-ti
 2. Add an event listener to handle Edit button clicks:
     ```javascript
     // Function to attach event listeners to edit buttons
-    function attachEventListeners() {
+    function attachEventListeners1() {
         // Select all elements with the 'edit' class and iterate over them
         document.querySelectorAll('.edit').forEach(button => {
             // Add a click event listener to each 'edit' button
@@ -184,7 +187,7 @@ Integrating CRUD operations connects your frontend and backend, allowing real-ti
 2. Add an event listener to handle Delete button clicks:
     ```javascript
     // Function to attach event listeners to delete buttons
-    function attachEventListeners() {
+    function attachEventListeners2() {
         // Select all elements with the 'delete' class and iterate over them
         document.querySelectorAll('.delete').forEach(button => {
             // Add a click event listener to each 'delete' button
