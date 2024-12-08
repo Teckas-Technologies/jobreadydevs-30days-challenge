@@ -2,6 +2,11 @@
 
 Welcome to Day 19 of the **Job-Ready Devs 30-Day Challenge!** 🎉 Today, we’ll focus on making your application more robust by adding error handling and validation to your backend. These techniques ensure your application behaves predictably, even when users provide incorrect inputs or unexpected issues occur.
 
+## Expected Output 
+At the end of **Day 19**, you will have knowledge of **Error handling and validation** and you will get an expected output like the one shown below:
+
+![Expected Output](https://gfxvsstorage.blob.core.windows.net/gfxvscontainer/Day19.png) 
+
 ## Objectives
 1. Add validation rules to the Student schema to enforce data integrity.
 2. Implement error handling in Express routes to manage invalid inputs gracefully.
@@ -145,7 +150,6 @@ Welcome to Day 19 of the **Job-Ready Devs 30-Day Challenge!** 🎉 Today, we’l
 ### Step 6: Handle Errors on the Frontend (Optional)
 1. Update the Fetch API logic in `script.js` to display backend error messages:
     ```javascript
-    Copy code
     fetch('/students', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -195,4 +199,4 @@ Welcome to Day 19 of the **Job-Ready Devs 30-Day Challenge!** 🎉 Today, we’l
 ---
 
 # Fantastic Job! 🎉
-You’ve made your backend more reliable, secure, and user-friendly by adding error handling and validation. This ensures your application can handle edge cases gracefully while guiding users with clear error messages. Get ready to tackle more advanced features tomorrow! 🚀
+You’ve made your backend more reliable, secure, and user-friendly by adding **error handling** and **validation**. This ensures your application can handle edge cases gracefully while guiding users with clear error messages. Get ready to tackle more advanced features tomorrow! 🚀
