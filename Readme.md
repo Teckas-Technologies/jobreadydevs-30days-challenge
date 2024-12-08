@@ -90,34 +90,20 @@ Welcome to Day 20 of the **Job-Ready Devs 30-Day Challenge!** 🎉 Today, we’l
 ### Step 5: Verify End-to-End Functionality
 1. Start the server and open the app in a browser.
 2. Perform a complete end-to-end test:
-- Add a new student.
-- Fetch the updated student list.
-- Edit the student’s details.
-- Delete the student.
+  - Add a new student.
+  - Fetch the updated student list.
+  - Edit the student’s details.
+  - Delete the student.
 3. Confirm that the frontend and backend integration works flawlessly.
 
+## Your Assignment Task:
+1. Verify the functionality by performing the steps above in your own environment.
+2. Share your feedback or any improvements you suggest in the Telegram channel comments.
+  - What worked well?
+  - What issues did you encounter?
+  - Do you have ideas for improving the process or features?
 
-## Push Your Changes to GitHub
-1. **Stage the changes**:
-    ```bash
-    git add .
-    ```
-
-2. **Commit the changes with a descriptive message**:
-    ```bash
-    git commit -m "Test and debug CRUD operations"
-    ```
-
-3. **Push the changes to your repository**:
-    ```bash
-    git push origin Day-20
-    ```
-
-4. **Push the final code to main branch**:
-    - Upload your final code to your `GitHub` main branch:
-    ```bash
-    git push origin Day-20:main --force
-    ```
+Your insights are valuable for improving the system! 🚀
 
 ---
 
