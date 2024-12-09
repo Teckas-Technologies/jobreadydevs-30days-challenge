@@ -2,6 +2,11 @@
 
 Welcome to Day 22 of the **Job-Ready Devs 30-Day Challenge!** 🎉 Today, you’ll learn how to implement a basic user authentication system in your app. Authentication is a crucial feature in modern applications, ensuring only authorized users can access specific features.
 
+## Expected Output 
+At the end of **Day 22**, you will have knowledge of **Restrict the actions to the user** and you will get an expected output like the one shown below:
+
+![Expected Output](https://gfxvsstorage.blob.core.windows.net/gfxvscontainer/Day22.png)  
+
 ## Why is Authentication Important?
 1. **Security**: Prevents unauthorized access to sensitive data or features.
 2. **User Personalization**: Enables unique user experiences, such as dashboards or saved preferences.
@@ -26,21 +31,110 @@ Even though today's task is optional, it's a valuable learning experience and an
 3. Add a login form at the top of the page:
     ```html
     <section id="login-form">
-        <h2>Login</h2>
-        <form>
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
-            <button type="submit">Login</button>
-        </form>
-        <p id="login-message"></p>
+        <div class="form-box">
+            <h2>Login</h2>
+            <form>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit">Login</button>
+            </form>
+            <p id="login-message"></p>
+        </div>
     </section>
+
+    <div class="sections restricted">  <!-- Add restricted class -->
+        <!-- Show Empty Student List -->
+        <section id="student-list">
+            <h2>Student List</h2>
+            <ul></ul>
+        </section>
+
+        <!-- Add student form -->
+        <section id="add-student-form">
+            <h2>Add Student</h2>
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter student name" required>
+                <br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter student email" required>
+                <br>
+                <div class="buttons">
+                    <button type="submit">Add Student</button>
+                </div>
+            </form>
+        </section>
+    </div>
     ```
 
 4. **Explanation**:
 - The `<form>` element collects user credentials (username and password).
 - The `<p>` element with id="login-message" will display success or error messages after login attempts.
+
+5. Open your `styles.css` & Add styles for the login form
+    ```css
+    /* Styles for the sections container */
+    .sections {
+        display: none;
+        width: 100%; /* Make the container take up the full width of the page */
+        gap: 3%; /* Add spacing between child elements */
+        padding: 1rem; /* Add padding inside the container */
+    }
+
+    /* Container for the login form with full width and dynamic height */
+    #login-form {
+        width: 100%; /* Takes up the full width of the viewport */
+        height: calc(100vh - 7rem); /* Sets the height to full viewport height minus 7rem */
+        display: flex; /* Uses flexbox for layout */
+        justify-content: center; /* Centers the form horizontally */
+        align-items: center; /* Centers the form vertically */
+    }
+
+    /* Styling for the form container */
+    .form-box {
+        width: 25rem; /* Sets a fixed width of 25rem */
+        height: auto; /* Allows the height to adjust based on content */
+        padding: 10px; /* Adds 10px padding inside the form box */
+        border-radius: 10px; /* Rounds the corners with a 10px radius */
+        background: #979797; /* Sets a grey background color */
+    }
+
+    /* Styling for the heading within the form */
+    .form-box h2 {
+        text-align: center; /* Centers the text horizontally */
+        padding: 3px 0; /* Adds 3px vertical padding */
+    }
+
+    /* Styling for input fields within the form */
+    .form-box input {
+        height: 25px; /* Sets a fixed height of 25px */
+        margin-top: 3px; /* Adds a 3px top margin */
+        margin-bottom: 10px; /* Adds a 10px bottom margin */
+    }
+
+    /* Styling for the form element itself */
+    .form-box form {
+        width: 100%; /* Takes up the full width of the `.form-box` */
+        display: flex; /* Uses flexbox for layout */
+        flex-direction: column; /* Stacks form elements vertically */
+        justify-content: center; /* Centers items vertically within the form */
+        align-items: center; /* Centers items horizontally within the form */
+    }
+
+    /* Styling for the submit button */
+    .form-box button {
+        width: 10rem; /* Sets a fixed width of 10rem */
+        height: 30px; /* Sets a fixed height of 30px */
+        margin-top: 10px; /* Adds a 10px top margin */
+        background: #48bde8; /* Sets a blue background color */
+        border: none; /* Removes the default border */
+        outline: none; /* Removes the default outline when focused */
+        border-radius: 6px; /* Rounds the corners with a 6px radius */
+        cursor: pointer; /* Changes the cursor to a pointer on hover */
+    }
+    ```
 
 ### Step 2: Create a Mock User Database
 1. Open your `server.js` file.
@@ -80,6 +174,7 @@ Even though today's task is optional, it's a valuable learning experience and an
     ```javascript
     const loginForm = document.querySelector('#login-form form');
     const loginMessage = document.querySelector('#login-message');
+    const loginFormSection = document.querySelector('#login-form');
 
     loginForm.addEventListener('submit', (event) => {
         event.preventDefault();
@@ -124,7 +219,8 @@ Even though today's task is optional, it's a valuable learning experience and an
     function toggleFeatures() {
         const features = document.querySelectorAll('.restricted');
         features.forEach(feature => {
-            feature.style.display = isLoggedIn ? 'block' : 'none';
+            feature.style.display = isLoggedIn ? 'flex' : 'none';
+            loginFormSection.style.display = "none";
         });
     }
 
