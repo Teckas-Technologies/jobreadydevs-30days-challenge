@@ -1,4 +1,4 @@
-# Day 22: User Authentication Basics (Optional)
+# Day 22: User Authentication Basics
 
 Welcome to Day 22 of the **Job-Ready Devs 30-Day Challenge!** 🎉 Today, you’ll learn how to implement a basic user authentication system in your app. Authentication is a crucial feature in modern applications, ensuring only authorized users can access specific features.
 
