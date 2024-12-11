@@ -95,7 +95,7 @@ function showMessage(message, type) {
 
     setTimeout(() => {
         messageBox.remove();
-    }, 10000);
+    }, 4000);
 }
 
 
