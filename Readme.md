@@ -98,7 +98,7 @@ Welcome to Day 20 of the **Job-Ready Devs 30-Day Challenge!** 🎉 Today, we’l
 
 ## Your Assignment Task:
 1. Verify the functionality by performing the steps above in your own environment.
-2. Share your feedback or any improvements you suggest in the Telegram channel comments.
+2. Share your feedback or any improvements you suggest in the [Telegram channel](https://t.me/jobreadydevs) comments.
   - What worked well?
   - What issues did you encounter?
   - Do you have ideas for improving the process or features?
