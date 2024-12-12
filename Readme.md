@@ -74,7 +74,8 @@ Welcome to Day 24 of the **Job-Ready Devs 30-Day Challenge!**🎉 Today, you’l
 2. Format your code using tools like Prettier or your editor’s built-in formatter.  
 
 ### Step 6: Document the Testing Process
-1. Create a testing checklist for future reference:
+1. Create `MyReadme.md` file.
+1. Write a testing checklist for future reference:
     - Include all tested features and scenarios.
     - Mark each item as passed or failed during testing.
 2. Note any bugs fixed and remaining issues (if any).
@@ -87,7 +88,7 @@ Welcome to Day 24 of the **Job-Ready Devs 30-Day Challenge!**🎉 Today, you’l
 
 2. **Commit the changes with a descriptive message**:
     ```bash
-    git commit -m "Conduct final testing and fix issues"
+    git commit -m "Document the testing & issues"
     ```
 
 3. **Push the changes to your repository**:
