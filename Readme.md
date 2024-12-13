@@ -1,6 +1,6 @@
 # Day 25: Deployment on Heroku or GitHub Pages
 
-Welcome to Day 25 of the Job-Ready Devs 30-Day Challenge! Today, you’ll take your app live by deploying it on Heroku or GitHub Pages. Deployment allows users to access your app via the internet, making it accessible and professional.
+Welcome to Day 25 of the **Job-Ready Devs 30-Day Challenge!** 🎉 Today, you’ll take your app live by deploying it on Heroku or GitHub Pages. Deployment allows users to access your app via the internet, making it accessible and professional.
 
 ## Objectives
 1. Deploy the application live using Heroku (for full-stack apps) or GitHub Pages (for frontend-only apps).
@@ -12,7 +12,7 @@ Welcome to Day 25 of the Job-Ready Devs 30-Day Challenge! Today, you’ll take y
 ## Steps
 
 ### Step 1: Choose a Deployment Platform
-- **Heroku**: For full-stack apps with a Node.js backend.
+- **Heroku**: For full-stack apps with a `Node.js` backend.
 - **GitHub Pages**: For frontend-only apps.
 
 ---
