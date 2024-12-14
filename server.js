@@ -1,6 +1,7 @@
 const express = require('express'); // Import the Express library
 const mongoose = require('mongoose'); // Import the mongoose library to interact with MongoDB
 const Student = require('./models/Student');
+require('dotenv').config();
 
 const app = express(); // Create an instance of an Express application
 
@@ -9,7 +10,7 @@ app.use(express.json()); // Middleware to parse JSON request bodies
 
 // Define the MongoDB connection URI
 // Replace 'localhost:27017/student-management' with your MongoDB URI (local or cloud-based)
-const mongoURI = 'mongodb://localhost:27017/student-management';
+const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/student-management';
 
 // Connect to the MongoDB database using mongoose
 mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
