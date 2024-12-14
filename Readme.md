@@ -1,6 +1,6 @@
 # Day 26: Writing a Professional README and Project Documentation
 
-Welcome to Day 26 of the **Job-Ready Devs 30-Day Challenge!**🎉 Today, you’ll focus on creating a comprehensive and professional `README.md` file for your project. A well-documented README helps showcase your work, guide users on how to set up and use the app, and enhance your GitHub portfolio.
+Welcome to Day 26 of the **Job-Ready Devs 30-Day Challenge!** 🎉 Today, you’ll focus on creating a comprehensive and professional `README.md` file for your project. A well-documented README helps showcase your work, guide users on how to set up and use the app, and enhance your GitHub portfolio.
 
 ## Objectives
 1. Write a professional `README.md` file for your project.
@@ -65,7 +65,7 @@ Welcome to Day 26 of the **Job-Ready Devs 30-Day Challenge!**🎉 Today, you’l
     - User authentication for secure access.
     - Responsive design for mobile and desktop devices.
     - Error handling and validation for data integrity.
-    - Deployed live using Heroku/GitHub Pages.
+    - Deployed live using Render.
     ```
 
 #### 2.3: Technologies Used
@@ -75,7 +75,7 @@ Welcome to Day 26 of the **Job-Ready Devs 30-Day Challenge!**🎉 Today, you’l
     - Frontend: HTML, CSS, JavaScript (Fetch API)
     - Backend: Node.js, Express.js
     - Database: MongoDB with Mongoose
-    - Deployment: Heroku/GitHub Pages
+    - Deployment: Render
     ```
 
 #### 2.4: Setup Instructions
@@ -101,7 +101,7 @@ Welcome to Day 26 of the **Job-Ready Devs 30-Day Challenge!**🎉 Today, you’l
     - Create a `.env` file in the root directory.
     - Add the following:
         ```env
-        MONGO_URI=<your-mongodb-uri>
+        MONGODB_URI=<your-mongodb-uri>
         ```
 
     5. Start the server:
@@ -137,13 +137,13 @@ Welcome to Day 26 of the **Job-Ready Devs 30-Day Challenge!**🎉 Today, you’l
 1. Include screenshots or a demo GIF to showcase the app:
     ```markdown
     ## Screenshots
-    ![App Screenshot](path/to/screenshot.png)
+    ![App Screenshot](path/or/url/to/screenshot.png)
     ```
 
 2. Add a link to the live demo:
     ```markdown
     ## Live Demo
-    Check out the deployed app: [Live Demo](https://your-app-name.herokuapp.com)
+    Check out the deployed app: [Live Demo](https://your-app-name.onrender.com)
     ```
 
 ### Step 4: Review and Format
