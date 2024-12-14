@@ -25,6 +25,7 @@ At the end of **Day 25**, you will have knowledge of **deployment**, **productio
     - Use environment variables for sensitive data (e.g., database URI).
 
 3. Add a start script in your `package.json`:
+    - This allows you to run your server using the npm start command.
     ```json
     "scripts": {
         "start": "node server.js"
@@ -32,21 +33,25 @@ At the end of **Day 25**, you will have knowledge of **deployment**, **productio
     ```
 
 4. Install `dotenv` to manage environment variables:
+    - dotenv lets you keep sensitive information like API keys outside of your code.
     ```bash
     npm install dotenv
     ```
 
 5. In your `server.js` (or entry point file), require dotenv at the top:
+    - This loads the environment variables defined in your .env file.
     ```javascript
     require('dotenv').config();
     ```
 
 6. Add your MongoDB URI in a `.env` file in the root of your project:
+    - Store your MongoDB connection string securely in the .env file.
     ```bash
     MONGODB_URI="mongodb+srv://<username>:<password>@cluster0.tqn82ch.mongodb.net/job-ready-devs?retryWrites=true&w=majority&appName=Cluster0"
     ```
 
 7. Update your `server.js` MongoDB connection code to use the environment variable:
+    - This ensures your app connects to the database using the URI from the `.env` file, with a fallback to a local database.
     ```javascript
     const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/student-management'
     ```
