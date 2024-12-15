@@ -18,14 +18,7 @@ Welcome to Day 28 of the **Job-Ready Devs 30-Day Challenge!** 🎉 Today, you’
    - The code is clean, well-commented, and follows best practices.
    - The `README.md` is updated with detailed documentation.
 
-2. Push your latest changes to GitHub:
-   ```bash
-   git add .
-   git commit -m "Prepare project for final code review"
-   git push origin main
-   ```
-
-3. Share your GitHub repository link with the group or mentor.
+2. Share your GitHub repository link with the group or mentor.
 
 ### Step 2: Conduct the Final Code Review
 1. Review other participants’ projects:
